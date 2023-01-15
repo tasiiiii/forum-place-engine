@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="/css/vendor/simplebar.css">
     <link rel="icon" href="/img/favicon.ico">
 
-    <title>Forum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+
+    <title>@yield('title')</title>
 </head>
 <body>
     <!-- PAGE LOADER -->
@@ -106,122 +110,11 @@
 
         <!-- MENU -->
         <ul class="menu small">
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Newsfeed">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-newsfeed">
-                        <use xlink:href="#svg-newsfeed"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Overview">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-overview">
-                        <use xlink:href="#svg-overview"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Groups">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-group">
-                        <use xlink:href="#svg-group"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Members">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-members">
-                        <use xlink:href="#svg-members"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Badges">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-badges">
-                        <use xlink:href="#svg-badges"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Quests">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-quests">
-                        <use xlink:href="#svg-quests"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Streams">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-streams">
-                        <use xlink:href="#svg-streams"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Events">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-events">
-                        <use xlink:href="#svg-events"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
 
             <!-- MENU ITEM -->
             <li class="menu-item active">
                 <!-- MENU ITEM LINK -->
-                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Forums">
+                <a class="menu-item-link text-tooltip-tfr" href="#" data-title="Forum">
                     <!-- MENU ITEM LINK ICON -->
                     <svg class="menu-item-link-icon icon-forums">
                         <use xlink:href="#svg-forums"></use>
@@ -313,7 +206,7 @@
                     <!-- /USER AVATAR BADGE CONTENT -->
 
                     <!-- USER AVATAR BADGE TEXT -->
-                    <p class="user-avatar-badge-text">24</p>
+                    <p class="user-avatar-badge-text">1</p>
                     <!-- /USER AVATAR BADGE TEXT -->
                 </div>
                 <!-- /USER AVATAR BADGE -->
@@ -321,12 +214,8 @@
             <!-- /USER SHORT DESCRIPTION AVATAR -->
 
             <!-- USER SHORT DESCRIPTION TITLE -->
-            <p class="user-short-description-title"><a href="#">Marina Valentine</a></p>
+            <p class="user-short-description-title"><a href="#">Loren Ipsum</a></p>
             <!-- /USER SHORT DESCRIPTION TITLE -->
-
-            <!-- USER SHORT DESCRIPTION TEXT -->
-            <p class="user-short-description-text"><a href="#">www.gamehuntress.com</a></p>
-            <!-- /USER SHORT DESCRIPTION TEXT -->
         </div>
         <!-- /USER SHORT DESCRIPTION -->
 
@@ -376,7 +265,7 @@
                 <!-- /USER STAT TITLE -->
 
                 <!-- USER STAT TEXT -->
-                <p class="user-stat-text">posts</p>
+                <p class="user-stat-text" style="font-family: 'Fira Sans', sans-serif;">Сообщения</p>
                 <!-- /USER STAT TEXT -->
             </div>
             <!-- /USER STAT -->
@@ -388,7 +277,7 @@
                 <!-- /USER STAT TITLE -->
 
                 <!-- USER STAT TEXT -->
-                <p class="user-stat-text">friends</p>
+                <p class="user-stat-text" style="font-family: 'Fira Sans', sans-serif;">Друзья</p>
                 <!-- /USER STAT TEXT -->
             </div>
             <!-- /USER STAT -->
@@ -400,7 +289,7 @@
                 <!-- /USER STAT TITLE -->
 
                 <!-- USER STAT TEXT -->
-                <p class="user-stat-text">visits</p>
+                <p class="user-stat-text" style="font-family: 'Fira Sans', sans-serif;">Визиты</p>
                 <!-- /USER STAT TEXT -->
             </div>
             <!-- /USER STAT -->
@@ -412,118 +301,13 @@
             <!-- MENU ITEM -->
             <li class="menu-item">
                 <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
+                <a class="menu-item-link" href="#" style="font-family: 'Fira Sans', sans-serif;">
                     <!-- MENU ITEM LINK ICON -->
                     <svg class="menu-item-link-icon icon-newsfeed">
                         <use xlink:href="#svg-newsfeed"></use>
                     </svg>
                     <!-- /MENU ITEM LINK ICON -->
-                    Newsfeed
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-overview">
-                        <use xlink:href="#svg-overview"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                    Overview
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-group">
-                        <use xlink:href="#svg-group"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                    Groups
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-members">
-                        <use xlink:href="#svg-members"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                    Members
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-badges">
-                        <use xlink:href="#svg-badges"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                    Badges
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-quests">
-                        <use xlink:href="#svg-quests"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                    Quests
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-streams">
-                        <use xlink:href="#svg-streams"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                    Streams
-                </a>
-                <!-- /MENU ITEM LINK -->
-            </li>
-            <!-- /MENU ITEM -->
-
-            <!-- MENU ITEM -->
-            <li class="menu-item">
-                <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
-                    <!-- MENU ITEM LINK ICON -->
-                    <svg class="menu-item-link-icon icon-events">
-                        <use xlink:href="#svg-events"></use>
-                    </svg>
-                    <!-- /MENU ITEM LINK ICON -->
-                    Events
+                    Лента
                 </a>
                 <!-- /MENU ITEM LINK -->
             </li>
@@ -532,13 +316,13 @@
             <!-- MENU ITEM -->
             <li class="menu-item active">
                 <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
+                <a class="menu-item-link" href="#" style="font-family: 'Fira Sans', sans-serif;">
                     <!-- MENU ITEM LINK ICON -->
                     <svg class="menu-item-link-icon icon-forums">
                         <use xlink:href="#svg-forums"></use>
                     </svg>
                     <!-- /MENU ITEM LINK ICON -->
-                    Forums
+                    Форум
                 </a>
                 <!-- /MENU ITEM LINK -->
             </li>
@@ -547,13 +331,13 @@
             <!-- MENU ITEM -->
             <li class="menu-item">
                 <!-- MENU ITEM LINK -->
-                <a class="menu-item-link" href="#">
+                <a class="menu-item-link" href="#" style="font-family: 'Fira Sans', sans-serif;">
                     <!-- MENU ITEM LINK ICON -->
                     <svg class="menu-item-link-icon icon-marketplace">
                         <use xlink:href="#svg-marketplace"></use>
                     </svg>
                     <!-- /MENU ITEM LINK ICON -->
-                    Marketplace
+                    Маркет
                 </a>
                 <!-- /MENU ITEM LINK -->
             </li>
@@ -624,7 +408,7 @@
                         <!-- /USER AVATAR BADGE CONTENT -->
 
                         <!-- USER AVATAR BADGE TEXT -->
-                        <p class="user-avatar-badge-text">24</p>
+                        <p class="user-avatar-badge-text">1</p>
                         <!-- /USER AVATAR BADGE TEXT -->
                     </div>
                     <!-- /USER AVATAR BADGE -->
@@ -974,7 +758,7 @@
                     <!-- MENU MAIN ITEM -->
                     <li class="menu-main-item">
                         <!-- MENU MAIN ITEM LINK -->
-                        <a class="menu-main-item-link" href="#">Home</a>
+                        <a class="menu-main-item-link" href="#" style="font-family: 'Fira Sans', sans-serif;">Главная</a>
                         <!-- /MENU MAIN ITEM LINK -->
                     </li>
                     <!-- /MENU MAIN ITEM -->
@@ -982,7 +766,7 @@
                     <!-- MENU MAIN ITEM -->
                     <li class="menu-main-item">
                         <!-- MENU MAIN ITEM LINK -->
-                        <a class="menu-main-item-link" href="#">Careers</a>
+                        <a class="menu-main-item-link" href="#" style="font-family: 'Fira Sans', sans-serif;">Маркет</a>
                         <!-- /MENU MAIN ITEM LINK -->
                     </li>
                     <!-- /MENU MAIN ITEM -->
@@ -990,7 +774,7 @@
                     <!-- MENU MAIN ITEM -->
                     <li class="menu-main-item">
                         <!-- MENU MAIN ITEM LINK -->
-                        <a class="menu-main-item-link" href="#">Faqs</a>
+                        <a class="menu-main-item-link" href="#" style="font-family: 'Fira Sans', sans-serif;">Правила</a>
                         <!-- /MENU MAIN ITEM LINK -->
                     </li>
                     <!-- /MENU MAIN ITEM -->
@@ -1005,7 +789,7 @@
         <div class="header-actions search-bar">
             <!-- INTERACTIVE INPUT -->
             <div class="interactive-input dark">
-                <input type="text" id="search-main" name="search_main" placeholder="Search here for people or groups">
+                <input type="text" id="search-main" name="search_main" placeholder="Поиск по форуму и маркету" style="font-family: 'Fira Sans', sans-serif;">
                 <!-- INTERACTIVE INPUT ICON WRAP -->
                 <div class="interactive-input-icon-wrap">
                     <!-- INTERACTIVE INPUT ICON -->
@@ -1041,7 +825,7 @@
                 <!-- DROPDOWN BOX LIST -->
                 <div class="dropdown-box-list small no-scroll">
                     <!-- DROPDOWN BOX LIST ITEM -->
-                    <a class="dropdown-box-list-item" href="profile-timeline.html">
+                    <a class="dropdown-box-list-item" href="#">
                         <!-- USER STATUS -->
                         <div class="user-status notification">
                             <!-- USER STATUS AVATAR -->
@@ -1309,26 +1093,6 @@
                 <!-- /DROPDOWN BOX LIST -->
             </div>
             <!-- /DROPDOWN BOX -->
-        </div>
-        <!-- /HEADER ACTIONS -->
-
-        <!-- HEADER ACTIONS -->
-        <div class="header-actions">
-            <!-- PROGRESS STAT -->
-            <div class="progress-stat">
-                <!-- BAR PROGRESS WRAP -->
-                <div class="bar-progress-wrap">
-                    <!-- BAR PROGRESS INFO -->
-                    <p class="bar-progress-info">Next: <span class="bar-progress-text"></span></p>
-                    <!-- /BAR PROGRESS INFO -->
-                </div>
-                <!-- /BAR PROGRESS WRAP -->
-
-                <!-- PROGRESS STAT BAR -->
-                <div id="logged-user-level" class="progress-stat-bar"></div>
-                <!-- /PROGRESS STAT BAR -->
-            </div>
-            <!-- /PROGRESS STAT -->
         </div>
         <!-- /HEADER ACTIONS -->
 
@@ -3022,91 +2786,7 @@
     </header>
     <!-- /HEADER -->
 
-    <!-- FLOATY BAR -->
-    <aside class="floaty-bar">
-        <!-- BAR ACTIONS -->
-        <div class="bar-actions">
-            <!-- PROGRESS STAT -->
-            <div class="progress-stat">
-                <!-- BAR PROGRESS WRAP -->
-                <div class="bar-progress-wrap">
-                    <!-- BAR PROGRESS INFO -->
-                    <p class="bar-progress-info">Next: <span class="bar-progress-text"></span></p>
-                    <!-- /BAR PROGRESS INFO -->
-                </div>
-                <!-- /BAR PROGRESS WRAP -->
-
-                <!-- PROGRESS STAT BAR -->
-                <div id="logged-user-level-cp" class="progress-stat-bar"></div>
-                <!-- /PROGRESS STAT BAR -->
-            </div>
-            <!-- /PROGRESS STAT -->
-        </div>
-        <!-- /BAR ACTIONS -->
-
-        <!-- BAR ACTIONS -->
-        <div class="bar-actions">
-            <!-- ACTION LIST -->
-            <div class="action-list dark">
-                <!-- ACTION LIST ITEM -->
-                <a class="action-list-item" href="marketplace-cart.html">
-                    <!-- ACTION LIST ITEM ICON -->
-                    <svg class="action-list-item-icon icon-shopping-bag">
-                        <use xlink:href="#svg-shopping-bag"></use>
-                    </svg>
-                    <!-- /ACTION LIST ITEM ICON -->
-                </a>
-                <!-- /ACTION LIST ITEM -->
-
-                <!-- ACTION LIST ITEM -->
-                <a class="action-list-item" href="hub-profile-requests.html">
-                    <!-- ACTION LIST ITEM ICON -->
-                    <svg class="action-list-item-icon icon-friend">
-                        <use xlink:href="#svg-friend"></use>
-                    </svg>
-                    <!-- /ACTION LIST ITEM ICON -->
-                </a>
-                <!-- /ACTION LIST ITEM -->
-
-                <!-- ACTION LIST ITEM -->
-                <a class="action-list-item" href="hub-profile-messages.html">
-                    <!-- ACTION LIST ITEM ICON -->
-                    <svg class="action-list-item-icon icon-messages">
-                        <use xlink:href="#svg-messages"></use>
-                    </svg>
-                    <!-- /ACTION LIST ITEM ICON -->
-                </a>
-                <!-- /ACTION LIST ITEM -->
-
-                <!-- ACTION LIST ITEM -->
-                <a class="action-list-item unread" href="hub-profile-notifications.html">
-                    <!-- ACTION LIST ITEM ICON -->
-                    <svg class="action-list-item-icon icon-notification">
-                        <use xlink:href="#svg-notification"></use>
-                    </svg>
-                    <!-- /ACTION LIST ITEM ICON -->
-                </a>
-                <!-- /ACTION LIST ITEM -->
-            </div>
-            <!-- /ACTION LIST -->
-
-            <!-- ACTION ITEM WRAP -->
-            <a class="action-item-wrap" href="hub-profile-info.html">
-                <!-- ACTION ITEM -->
-                <div class="action-item dark">
-                    <!-- ACTION ITEM ICON -->
-                    <svg class="action-item-icon icon-settings">
-                        <use xlink:href="#svg-settings"></use>
-                    </svg>
-                    <!-- /ACTION ITEM ICON -->
-                </div>
-                <!-- /ACTION ITEM -->
-            </a>
-            <!-- /ACTION ITEM WRAP -->
-        </div>
-        <!-- /BAR ACTIONS -->
-    </aside>
-    <!-- /FLOATY BAR -->
+    @yield('content')
 
     <!-- CONTENT GRID -->
     <div class="content-grid">
@@ -3117,30 +2797,14 @@
             <!-- /SECTION BANNER ICON -->
 
             <!-- SECTION BANNER TITLE -->
-            <p class="section-banner-title">Forums</p>
+            <p class="section-banner-title">Forum</p>
             <!-- /SECTION BANNER TITLE -->
 
             <!-- SECTION BANNER TEXT -->
-            <p class="section-banner-text">Talk about anything! Gaming, music, comics and more!</p>
+            <p class="section-banner-text" style="font-family: 'Fira Sans', sans-serif;">Форум посвященный социальной инженерии</p>
             <!-- /SECTION BANNER TEXT -->
         </div>
         <!-- /SECTION BANNER -->
-
-        <!-- SECTION HEADER -->
-        <div class="section-header">
-            <!-- SECTION HEADER INFO -->
-            <div class="section-header-info">
-                <!-- SECTION PRETITLE -->
-                <p class="section-pretitle">Welcome to</p>
-                <!-- /SECTION PRETITLE -->
-
-                <!-- SECTION TITLE -->
-                <h2 class="section-title">Vikinger Forums</h2>
-                <!-- /SECTION TITLE -->
-            </div>
-            <!-- /SECTION HEADER INFO -->
-        </div>
-        <!-- /SECTION HEADER -->
 
         <!-- SECTION FILTERS BAR -->
         <div class="section-filters-bar v7">
@@ -3149,12 +2813,8 @@
                 <!-- SECTION FILTERS BAR INFO -->
                 <div class="section-filters-bar-info">
                     <!-- SECTION FILTERS BAR TITLE -->
-                    <p class="section-filters-bar-title"><a href="forums.html">Forums</a></p>
+                    <p class="section-filters-bar-title"><a href="/">Forum</a></p>
                     <!-- /SECTION FILTERS BAR TITLE -->
-
-                    <!-- SECTION FILTERS BAR TEXT -->
-                    <p class="section-filters-bar-text">Last category added <a class="highlighted" href="forums-category.html">The Jukebox</a> 2 weeks ago</p>
-                    <!-- /SECTION FILTERS BAR TEXT -->
                 </div>
                 <!-- /SECTION FILTERS BAR INFO -->
             </div>
@@ -3168,7 +2828,7 @@
                     <div class="form-item split">
                         <!-- FORM INPUT -->
                         <div class="form-input small">
-                            <label for="forum-search">Search Forums</label>
+                            <label for="forum-search">Поиск...</label>
                             <input type="text" id="forum-search" name="forum_search">
                         </div>
                         <!-- /FORM INPUT -->
@@ -3198,7 +2858,7 @@
                 <!-- TABLE HEADER COLUMN -->
                 <div class="table-header-column">
                     <!-- TABLE HEADER TITLE -->
-                    <p class="table-header-title">Category</p>
+                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">Категория</p>
                     <!-- /TABLE HEADER TITLE -->
                 </div>
                 <!-- /TABLE HEADER COLUMN -->
@@ -3206,7 +2866,7 @@
                 <!-- TABLE HEADER COLUMN -->
                 <div class="table-header-column centered padded-medium">
                     <!-- TABLE HEADER TITLE -->
-                    <p class="table-header-title">Topics</p>
+                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">Топики</p>
                     <!-- /TABLE HEADER TITLE -->
                 </div>
                 <!-- /TABLE HEADER COLUMN -->
@@ -3214,7 +2874,7 @@
                 <!-- TABLE HEADER COLUMN -->
                 <div class="table-header-column centered padded-medium">
                     <!-- TABLE HEADER TITLE -->
-                    <p class="table-header-title">Posts</p>
+                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">Сообщения</p>
                     <!-- /TABLE HEADER TITLE -->
                 </div>
                 <!-- /TABLE HEADER COLUMN -->
@@ -3222,7 +2882,7 @@
                 <!-- TABLE HEADER COLUMN -->
                 <div class="table-header-column padded-big-left">
                     <!-- TABLE HEADER TITLE -->
-                    <p class="table-header-title">Recent Topics</p>
+                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">Последнии топики</p>
                     <!-- /TABLE HEADER TITLE -->
                 </div>
                 <!-- /TABLE HEADER COLUMN -->
