@@ -1,0 +1,2 @@
+@extends('forum.layout.main')
+
