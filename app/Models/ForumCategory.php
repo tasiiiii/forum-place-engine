@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $title
  * @property string $description
  * @property string $icon
+ * @property string $alias
  * @property int    $creator_id
  */
 class ForumCategory extends Model

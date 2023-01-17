@@ -88,4 +88,177 @@
         <!-- /BAR ACTIONS -->
     </aside>
     <!-- /FLOATY BAR -->
+
+    <!-- CONTENT GRID -->
+    <div class="content-grid">
+        <!-- SECTION BANNER -->
+        <div class="section-banner">
+            <!-- SECTION BANNER ICON -->
+            <img class="section-banner-icon" src="img/banner/forums-icon.png" alt="forums-icon">
+            <!-- /SECTION BANNER ICON -->
+
+            <!-- SECTION BANNER TITLE -->
+            <p class="section-banner-title">Forum</p>
+            <!-- /SECTION BANNER TITLE -->
+
+            <!-- SECTION BANNER TEXT -->
+            <p class="section-banner-text" style="font-family: 'Fira Sans', sans-serif;">Форум посвященный социальной инженерии</p>
+            <!-- /SECTION BANNER TEXT -->
+        </div>
+        <!-- /SECTION BANNER -->
+
+        <!-- SECTION FILTERS BAR -->
+        <div class="section-filters-bar v7">
+            <!-- SECTION FILTERS BAR ACTIONS -->
+            <div class="section-filters-bar-actions">
+                <!-- SECTION FILTERS BAR INFO -->
+                <div class="section-filters-bar-info">
+                    <!-- SECTION FILTERS BAR TITLE -->
+                    <p class="section-filters-bar-title"><a href="/">Forum</a></p>
+                    <!-- /SECTION FILTERS BAR TITLE -->
+                </div>
+                <!-- /SECTION FILTERS BAR INFO -->
+            </div>
+            <!-- /SECTION FILTERS BAR ACTIONS -->
+
+            <!-- SECTION FILTERS BAR ACTIONS -->
+            <div class="section-filters-bar-actions">
+                <!-- FORM -->
+                <form class="form">
+                    <!-- FORM ITEM -->
+                    <div class="form-item split">
+                        <!-- FORM INPUT -->
+                        <div class="form-input small">
+                            <label for="forum-search">Поиск...</label>
+                            <input type="text" id="forum-search" name="forum_search">
+                        </div>
+                        <!-- /FORM INPUT -->
+
+                        <!-- BUTTON -->
+                        <button class="button primary">
+                            <!-- ICON MAGNIFYING GLASS -->
+                            <svg class="icon-magnifying-glass">
+                                <use xlink:href="#svg-magnifying-glass"></use>
+                            </svg>
+                            <!-- /ICON MAGNIFYING GLASS -->
+                        </button>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /FORM ITEM -->
+                </form>
+                <!-- /FORM -->
+            </div>
+            <!-- /SECTION FILTERS BAR ACTIONS -->
+        </div>
+        <!-- /SECTION FILTERS BAR -->
+
+        <!-- TABLE -->
+        <div class="table table-forum-category">
+            <!-- TABLE HEADER -->
+            <div class="table-header">
+                <!-- TABLE HEADER COLUMN -->
+                <div class="table-header-column">
+                    <!-- TABLE HEADER TITLE -->
+                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">Категория</p>
+                    <!-- /TABLE HEADER TITLE -->
+                </div>
+                <!-- /TABLE HEADER COLUMN -->
+
+                <!-- TABLE HEADER COLUMN -->
+                <div class="table-header-column centered padded-medium">
+                    <!-- TABLE HEADER TITLE -->
+                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">Топики</p>
+                    <!-- /TABLE HEADER TITLE -->
+                </div>
+                <!-- /TABLE HEADER COLUMN -->
+
+                <!-- TABLE HEADER COLUMN -->
+                <div class="table-header-column centered padded-medium">
+                    <!-- TABLE HEADER TITLE -->
+                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">Сообщения</p>
+                    <!-- /TABLE HEADER TITLE -->
+                </div>
+                <!-- /TABLE HEADER COLUMN -->
+
+                <!-- TABLE HEADER COLUMN -->
+                <div class="table-header-column padded-big-left">
+                    <!-- TABLE HEADER TITLE -->
+                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">Последнии топики</p>
+                    <!-- /TABLE HEADER TITLE -->
+                </div>
+                <!-- /TABLE HEADER COLUMN -->
+            </div>
+            <!-- /TABLE HEADER -->
+
+            <!-- TABLE BODY -->
+            <div class="table-body">
+                <!-- TABLE ROW -->
+                @foreach($viewDataList as $item)
+                <div class="table-row big">
+                    <!-- TABLE COLUMN -->
+                    <div class="table-column">
+                        <!-- FORUM CATEGORY -->
+                        <div class="forum-category">
+                            <!-- FORUM CATEGORY IMAGE -->
+                            <a href="forums-category.html">
+                                <img class="forum-category-image" src="{{ $item->getIcon() }}" alt="category-01">
+                            </a>
+                            <!-- /FORUM CATEGORY IMAGE -->
+
+                            <!-- FORUM CATEGORY INFO -->
+                            <div class="forum-category-info">
+                                <!-- FORUM CATEGORY TITLE -->
+                                <p class="forum-category-title"><a href="forums-category.html" style="font-family: 'Fira Sans', sans-serif;">{{ $item->getTitle() }}</a></p>
+                                <!-- /FORUM CATEGORY TITLE -->
+
+                                <!-- FORUM CATEGORY TEXT -->
+                                <p class="forum-category-text" style="font-family: 'Fira Sans', sans-serif;">{{ $item->getDescription() }}</p>
+                                <!-- /FORUM CATEGORY TEXT -->
+                            </div>
+                            <!-- /FORUM CATEGORY INFO -->
+                        </div>
+                        <!-- /FORUM CATEGORY -->
+                    </div>
+                    <!-- /TABLE COLUMN -->
+
+                    <!-- TABLE COLUMN -->
+                    <div class="table-column centered padded-medium">
+                        <!-- TABLE TITLE -->
+                        <p class="table-title">44</p>
+                        <!-- /TABLE TITLE -->
+                    </div>
+                    <!-- /TABLE COLUMN -->
+
+                    <!-- TABLE COLUMN -->
+                    <div class="table-column centered padded-medium">
+                        <!-- TABLE TITLE -->
+                        <p class="table-title">236</p>
+                        <!-- /TABLE TITLE -->
+                    </div>
+                    <!-- /TABLE COLUMN -->
+
+                    <!-- TABLE COLUMN -->
+                    <div class="table-column padded-big-left">
+                        <!-- TABLE LINK -->
+                        <a class="table-link" href="forums-discussion.html">What's your favourite food in the world?</a>
+                        <!-- /TABLE LINK -->
+
+                        <!-- TABLE LINK -->
+                        <a class="table-link" href="forums-discussion.html">Share a picture of your city or town and let's travel together!</a>
+                        <!-- /TABLE LINK -->
+
+                        <!-- TABLE LINK -->
+                        <a class="table-link" href="forums-discussion.html">Do you think we'll ever get flying cars in the future?</a>
+                        <!-- /TABLE LINK -->
+                    </div>
+                    <!-- /TABLE COLUMN -->
+                </div>
+                @endforeach
+                <!-- /TABLE ROW -->
+            </div>
+            <!-- /TABLE BODY -->
+        </div>
+        <!-- /TABLE -->
+    </div>
+    <!-- /CONTENT GRID -->
 @endsection

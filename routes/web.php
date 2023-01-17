@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\Web\Forum\Index\Controller::class, 'run']);
+Route::get('/', [\App\Http\Controllers\Web\Forum\Index\Controller::class, 'run'])->name('forum_index');
+Route::get('forum-category/{alias}', [])->name('forum_category');
