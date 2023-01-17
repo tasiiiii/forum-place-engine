@@ -2938,8 +2938,6 @@
 
     </div>
 
-    @yield('content')
-
     <script src="/js/utils/app.js"></script>
     <script src="/js/utils/page-loader.js"></script>
     <script src="/js/vendor/simplebar.min.js"></script>
