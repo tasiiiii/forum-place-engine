@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Web\Forum\Index;
 
+use App\ForumPlaceEngine\ForumSection\ForumSectionRepositoryInterface;
 use App\Http\Controllers\BaseController;
-use App\Repository\ForumCategoryRepository;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -11,22 +11,22 @@ use Illuminate\Contracts\View\View;
 class Controller extends BaseController
 {
     public function __construct(
-        private readonly ForumCategoryRepository $forumCategoryRepository,
-        private readonly OutputService           $outputService
+        private readonly ForumSectionRepositoryInterface $forumSectionRepository,
+        private readonly ForumSectionViewBuilder         $forumSectionViewBuilder
     )
     {}
 
     public function run(): Factory|View|Application
     {
-        $forumCategories = $this->forumCategoryRepository->getAll();
+        $forumSections = $this->forumSectionRepository->getAll();
 
-        $viewDataList = [];
-        foreach ($forumCategories as $forumCategory) {
-            $viewDataList[] = $this->outputService->build($forumCategory);
+        $forumSectionViewData = [];
+        foreach ($forumSections as $forumSection) {
+            $forumSectionViewData[] = $this->forumSectionViewBuilder->build($forumSection);
         }
 
         return view('forum.index', [
-            'viewDataList' => $viewDataList,
+            'forumSectionViewData' => $forumSectionViewData,
         ]);
     }
 }

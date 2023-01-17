@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Web\Forum\Index\Dto;
 
-class ViewData
+class ForumCategoryViewData
 {
     private string $title;
     private string $description;

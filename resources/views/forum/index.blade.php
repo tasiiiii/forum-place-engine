@@ -152,6 +152,7 @@
         </div>
         <!-- /SECTION FILTERS BAR -->
 
+        @foreach($forumSectionViewData as $forumSectionViewData)
         <!-- TABLE -->
         <div class="table table-forum-category">
             <!-- TABLE HEADER -->
@@ -159,7 +160,7 @@
                 <!-- TABLE HEADER COLUMN -->
                 <div class="table-header-column">
                     <!-- TABLE HEADER TITLE -->
-                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">Категория</p>
+                    <p class="table-header-title" style="font-family: 'Fira Sans', sans-serif;">{{ $forumSectionViewData->getTitle() }}</p>
                     <!-- /TABLE HEADER TITLE -->
                 </div>
                 <!-- /TABLE HEADER COLUMN -->
@@ -193,14 +194,14 @@
             <!-- TABLE BODY -->
             <div class="table-body">
                 <!-- TABLE ROW -->
-                @foreach($viewDataList as $item)
+                @foreach($forumSectionViewData->getCategories() as $item)
                 <div class="table-row big">
                     <!-- TABLE COLUMN -->
                     <div class="table-column">
                         <!-- FORUM CATEGORY -->
                         <div class="forum-category">
                             <!-- FORUM CATEGORY IMAGE -->
-                            <a href="forums-category.html">
+                            <a href="{{ $item->getForumCategoryLink() }}">
                                 <img class="forum-category-image" src="{{ $item->getIcon() }}" alt="category-01">
                             </a>
                             <!-- /FORUM CATEGORY IMAGE -->
@@ -208,7 +209,7 @@
                             <!-- FORUM CATEGORY INFO -->
                             <div class="forum-category-info">
                                 <!-- FORUM CATEGORY TITLE -->
-                                <p class="forum-category-title"><a href="forums-category.html" style="font-family: 'Fira Sans', sans-serif;">{{ $item->getTitle() }}</a></p>
+                                <p class="forum-category-title"><a href="{{ $item->getForumCategoryLink() }}" style="font-family: 'Fira Sans', sans-serif;">{{ $item->getTitle() }}</a></p>
                                 <!-- /FORUM CATEGORY TITLE -->
 
                                 <!-- FORUM CATEGORY TEXT -->
@@ -259,6 +260,7 @@
             <!-- /TABLE BODY -->
         </div>
         <!-- /TABLE -->
+        @endforeach
     </div>
     <!-- /CONTENT GRID -->
 @endsection

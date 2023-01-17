@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('icon');
-            $table->string('alias');
+            $table->string('alias')->unique();
+            $table->unsignedBigInteger('forum_section_id');
+            $table->foreign('forum_section_id')->references('id')->on('forum_sections');
             $table->unsignedBigInteger('creator_id');
             $table->foreign('creator_id')->references('id')->on('users');
             $table->timestamps();
