@@ -758,7 +758,7 @@
                     <!-- MENU MAIN ITEM -->
                     <li class="menu-main-item">
                         <!-- MENU MAIN ITEM LINK -->
-                        <a class="menu-main-item-link" href="#" style="font-family: 'Fira Sans', sans-serif;">Главная</a>
+                        <a class="menu-main-item-link" href="/" style="font-family: 'Fira Sans', sans-serif;">Главная</a>
                         <!-- /MENU MAIN ITEM LINK -->
                     </li>
                     <!-- /MENU MAIN ITEM -->
@@ -1779,7 +1779,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/05.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/05.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -1855,7 +1855,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/03.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/03.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -1931,7 +1931,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/07.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/07.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -2007,7 +2007,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/12.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/12.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -2083,7 +2083,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/10.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/10.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -2205,7 +2205,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/03.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/03.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -2287,7 +2287,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/07.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/07.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -2337,7 +2337,7 @@
                                     <!-- /USER STATUS AVATAR -->
 
                                     <!-- USER STATUS TITLE -->
-                                    <p class="user-status-title"><a class="bold" href="profile-timeline.html">Sarah Diamond</a> left a like <img class="reaction" src="img/reaction/like.png" alt="reaction-like"> reaction on your <a class="highlighted" href="profile-timeline.html">status update</a></p>
+                                    <p class="user-status-title"><a class="bold" href="profile-timeline.html">Sarah Diamond</a> left a like <img class="reaction" src="/img/reaction/like.png" alt="reaction-like"> reaction on your <a class="highlighted" href="profile-timeline.html">status update</a></p>
                                     <!-- /USER STATUS TITLE -->
 
                                     <!-- USER STATUS TIMESTAMP -->
@@ -2369,7 +2369,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/02.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/02.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -2451,7 +2451,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/10.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/10.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -2501,7 +2501,7 @@
                                     <!-- /USER STATUS AVATAR -->
 
                                     <!-- USER STATUS TITLE -->
-                                    <p class="user-status-title"><a class="bold" href="profile-timeline.html">The Green Goo</a> left a love <img class="reaction" src="img/reaction/love.png" alt="reaction-love"> reaction on your <a class="highlighted" href="profile-timeline.html">status update</a></p>
+                                    <p class="user-status-title"><a class="bold" href="profile-timeline.html">The Green Goo</a> left a love <img class="reaction" src="/img/reaction/love.png" alt="reaction-love"> reaction on your <a class="highlighted" href="profile-timeline.html">status update</a></p>
                                     <!-- /USER STATUS TITLE -->
 
                                     <!-- USER STATUS TIMESTAMP -->
@@ -2533,7 +2533,7 @@
                                             <!-- USER AVATAR CONTENT -->
                                             <div class="user-avatar-content">
                                                 <!-- HEXAGON -->
-                                                <div class="hexagon-image-30-32" data-src="img/avatar/05.jpg"></div>
+                                                <div class="hexagon-image-30-32" data-src="/img/avatar/05.jpg"></div>
                                                 <!-- /HEXAGON -->
                                             </div>
                                             <!-- /USER AVATAR CONTENT -->
@@ -2641,7 +2641,7 @@
                                     <!-- USER AVATAR CONTENT -->
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
-                                        <div class="hexagon-image-30-32" data-src="img/avatar/01.jpg"></div>
+                                        <div class="hexagon-image-30-32" data-src="/img/avatar/01.jpg"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -2785,6 +2785,158 @@
         <!-- /HEADER ACTIONS -->
     </header>
     <!-- /HEADER -->
+
+    <!-- FLOATY BAR -->
+    <aside class="floaty-bar">
+        <!-- BAR ACTIONS -->
+        <div class="bar-actions">
+            <!-- PROGRESS STAT -->
+            <div class="progress-stat">
+                <!-- BAR PROGRESS WRAP -->
+                <div class="bar-progress-wrap">
+                    <!-- BAR PROGRESS INFO -->
+                    <p class="bar-progress-info">Next: <span class="bar-progress-text"></span></p>
+                    <!-- /BAR PROGRESS INFO -->
+                </div>
+                <!-- /BAR PROGRESS WRAP -->
+
+                <!-- PROGRESS STAT BAR -->
+                <div id="logged-user-level-cp" class="progress-stat-bar"></div>
+                <!-- /PROGRESS STAT BAR -->
+            </div>
+            <!-- /PROGRESS STAT -->
+        </div>
+        <!-- /BAR ACTIONS -->
+
+        <!-- BAR ACTIONS -->
+        <div class="bar-actions">
+            <!-- ACTION LIST -->
+            <div class="action-list dark">
+                <!-- ACTION LIST ITEM -->
+                <a class="action-list-item" href="marketplace-cart.html">
+                    <!-- ACTION LIST ITEM ICON -->
+                    <svg class="action-list-item-icon icon-shopping-bag">
+                        <use xlink:href="#svg-shopping-bag"></use>
+                    </svg>
+                    <!-- /ACTION LIST ITEM ICON -->
+                </a>
+                <!-- /ACTION LIST ITEM -->
+
+                <!-- ACTION LIST ITEM -->
+                <a class="action-list-item" href="hub-profile-requests.html">
+                    <!-- ACTION LIST ITEM ICON -->
+                    <svg class="action-list-item-icon icon-friend">
+                        <use xlink:href="#svg-friend"></use>
+                    </svg>
+                    <!-- /ACTION LIST ITEM ICON -->
+                </a>
+                <!-- /ACTION LIST ITEM -->
+
+                <!-- ACTION LIST ITEM -->
+                <a class="action-list-item" href="hub-profile-messages.html">
+                    <!-- ACTION LIST ITEM ICON -->
+                    <svg class="action-list-item-icon icon-messages">
+                        <use xlink:href="#svg-messages"></use>
+                    </svg>
+                    <!-- /ACTION LIST ITEM ICON -->
+                </a>
+                <!-- /ACTION LIST ITEM -->
+
+                <!-- ACTION LIST ITEM -->
+                <a class="action-list-item unread" href="hub-profile-notifications.html">
+                    <!-- ACTION LIST ITEM ICON -->
+                    <svg class="action-list-item-icon icon-notification">
+                        <use xlink:href="#svg-notification"></use>
+                    </svg>
+                    <!-- /ACTION LIST ITEM ICON -->
+                </a>
+                <!-- /ACTION LIST ITEM -->
+            </div>
+            <!-- /ACTION LIST -->
+
+            <!-- ACTION ITEM WRAP -->
+            <a class="action-item-wrap" href="hub-profile-info.html">
+                <!-- ACTION ITEM -->
+                <div class="action-item dark">
+                    <!-- ACTION ITEM ICON -->
+                    <svg class="action-item-icon icon-settings">
+                        <use xlink:href="#svg-settings"></use>
+                    </svg>
+                    <!-- /ACTION ITEM ICON -->
+                </div>
+                <!-- /ACTION ITEM -->
+            </a>
+            <!-- /ACTION ITEM WRAP -->
+        </div>
+        <!-- /BAR ACTIONS -->
+    </aside>
+    <!-- /FLOATY BAR -->
+
+    <div class="content-grid">
+        <!-- SECTION BANNER -->
+        <div class="section-banner">
+            <!-- SECTION BANNER ICON -->
+            <img class="section-banner-icon" src="/img/banner/forums-icon.png" alt="forums-icon">
+            <!-- /SECTION BANNER ICON -->
+
+            <!-- SECTION BANNER TITLE -->
+            <p class="section-banner-title">Forum</p>
+            <!-- /SECTION BANNER TITLE -->
+
+            <!-- SECTION BANNER TEXT -->
+            <p class="section-banner-text" style="font-family: 'Fira Sans', sans-serif;">Форум посвященный социальной инженерии</p>
+            <!-- /SECTION BANNER TEXT -->
+        </div>
+        <!-- /SECTION BANNER -->
+
+        <!-- SECTION FILTERS BAR -->
+        <div class="section-filters-bar v7">
+            <!-- SECTION FILTERS BAR ACTIONS -->
+            <div class="section-filters-bar-actions">
+                <!-- SECTION FILTERS BAR INFO -->
+                <div class="section-filters-bar-info">
+                    <!-- SECTION FILTERS BAR TITLE -->
+                    <p class="section-filters-bar-title"><a href="/">Forum</a></p>
+                    <!-- /SECTION FILTERS BAR TITLE -->
+                </div>
+                <!-- /SECTION FILTERS BAR INFO -->
+            </div>
+            <!-- /SECTION FILTERS BAR ACTIONS -->
+
+            <!-- SECTION FILTERS BAR ACTIONS -->
+            <div class="section-filters-bar-actions">
+                <!-- FORM -->
+                <form class="form">
+                    <!-- FORM ITEM -->
+                    <div class="form-item split">
+                        <!-- FORM INPUT -->
+                        <div class="form-input small">
+                            <label for="forum-search">Поиск...</label>
+                            <input type="text" id="forum-search" name="forum_search">
+                        </div>
+                        <!-- /FORM INPUT -->
+
+                        <!-- BUTTON -->
+                        <button class="button primary">
+                            <!-- ICON MAGNIFYING GLASS -->
+                            <svg class="icon-magnifying-glass">
+                                <use xlink:href="#svg-magnifying-glass"></use>
+                            </svg>
+                            <!-- /ICON MAGNIFYING GLASS -->
+                        </button>
+                        <!-- /BUTTON -->
+                    </div>
+                    <!-- /FORM ITEM -->
+                </form>
+                <!-- /FORM -->
+            </div>
+            <!-- /SECTION FILTERS BAR ACTIONS -->
+        </div>
+        <!-- /SECTION FILTERS BAR -->
+
+        @yield('content')
+
+    </div>
 
     @yield('content')
 
