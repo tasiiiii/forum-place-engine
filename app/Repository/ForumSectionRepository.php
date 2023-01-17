@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\ForumPlaceEngine\ForumSection\ForumSectionRepositoryInterface;
+use App\ForumPlaceEngine\ForumSection\Repository\ForumSectionRepositoryInterface;
 use App\Models\ForumSection;
 use Illuminate\Database\Eloquent\Collection;
 

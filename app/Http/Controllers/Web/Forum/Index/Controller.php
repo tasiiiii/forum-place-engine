@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Web\Forum\Index;
 
-use App\ForumPlaceEngine\ForumSection\ForumSectionRepositoryInterface;
+use App\ForumPlaceEngine\ForumSection\Repository\ForumSectionRepositoryInterface;
 use App\Http\Controllers\BaseController;
 use Illuminate\Contracts\View\View;
 

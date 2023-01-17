@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ForumPlaceEngine\ForumSection;
+namespace App\ForumPlaceEngine\ForumSection\Repository;
 
 use Illuminate\Database\Eloquent\Collection;
 
