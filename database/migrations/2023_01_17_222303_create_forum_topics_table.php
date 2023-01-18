@@ -21,8 +21,8 @@ return new class extends Migration
             $table->foreign('creator_id')->references('id')->on('users');
             $table->integer('status');
             $table->unsignedBigInteger('views');
-            $table->unsignedBigInteger('forum_section_id');
-            $table->foreign('forum_section_id')->references('id')->on('forum_sections');
+            $table->unsignedBigInteger('forum_category_id');
+            $table->foreign('forum_category_id')->references('id')->on('forum_categories');
             $table->text('ban_reason')->nullable();
             $table->timestamps();
             $table->softDeletes();
