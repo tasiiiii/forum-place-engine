@@ -76,7 +76,7 @@
                         <!-- TABLE COLUMN -->
                         <div class="table-column centered padded-medium">
                             <!-- TABLE TITLE -->
-                            <p class="table-title">44</p>
+                            <p class="table-title">{{ $item->getTopicsCounter() }}</p>
                             <!-- /TABLE TITLE -->
                         </div>
                         <!-- /TABLE COLUMN -->

@@ -10,4 +10,12 @@ enum ForumTopicStatusEnum: int
     case Private   = 201;
     case Archived  = 3;
     case Banned    = 4;
+
+    public static function getStatusesWithOpenVisibility(): array
+    {
+        return [
+            self::Published,
+            self::Pinned,
+        ];
+    }
 }

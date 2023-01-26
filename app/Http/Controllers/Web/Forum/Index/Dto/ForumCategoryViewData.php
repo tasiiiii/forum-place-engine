@@ -7,6 +7,7 @@ class ForumCategoryViewData
     private string $title;
     private string $description;
     private string $icon;
+    private int    $topicsCounter;
     private string $forumCategoryLink;
 
     public function getTitle(): string
@@ -41,6 +42,18 @@ class ForumCategoryViewData
     public function setIcon(string $icon): self
     {
         $this->icon = $icon;
+
+        return $this;
+    }
+
+    public function getTopicsCounter(): int
+    {
+        return $this->topicsCounter;
+    }
+
+    public function setTopicsCounter(int $topicsCounter): self
+    {
+        $this->topicsCounter = $topicsCounter;
 
         return $this;
     }
