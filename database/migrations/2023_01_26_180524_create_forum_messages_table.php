@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('forum_messages', function (Blueprint $table) {
             $table->id();
             $table->text('content');
+            $table->integer('status');
             $table->unsignedBigInteger('creator_id');
             $table->foreign('creator_id')->references('id')->on('users');
-            $table->integer('status');
+            $table->unsignedBigInteger('forum_topic_id');
+            $table->foreign('forum_topic_id')->references('id')->on('forum_topics');
             $table->timestamps();
             $table->softDeletes();
         });

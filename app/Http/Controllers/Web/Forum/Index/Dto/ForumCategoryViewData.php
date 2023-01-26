@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\Web\Forum\Index\Dto;
 
+use App\Http\Controllers\Web\Forum\Index\ValueObject\ForumTopicViewData;
+
 class ForumCategoryViewData
 {
     private string $title;
     private string $description;
     private string $icon;
     private int    $topicsCounter;
+    private int    $messagesCounter;
+    /** @var ForumTopicViewData[] */
+    private array  $lastForumTopics = [];
     private string $forumCategoryLink;
 
     public function getTitle(): string
@@ -54,6 +59,37 @@ class ForumCategoryViewData
     public function setTopicsCounter(int $topicsCounter): self
     {
         $this->topicsCounter = $topicsCounter;
+
+        return $this;
+    }
+
+    public function getMessagesCounter(): int
+    {
+        return $this->messagesCounter;
+    }
+
+    public function setMessagesCounter(int $messagesCounter): self
+    {
+        $this->messagesCounter = $messagesCounter;
+
+        return $this;
+    }
+
+    /**
+     * @return ForumTopicViewData[]
+     */
+    public function getLastForumTopics(): array
+    {
+        return $this->lastForumTopics;
+    }
+
+    /**
+     * @param array $lastForumTopics
+     * @return $this
+     */
+    public function setLastForumTopics(array $lastForumTopics): self
+    {
+        $this->lastForumTopics = $lastForumTopics;
 
         return $this;
     }

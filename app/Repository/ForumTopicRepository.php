@@ -34,4 +34,13 @@ class ForumTopicRepository implements ForumTopicRepositoryInterface
             ->whereRelation('forumCategory', 'alias', '=', $forumCategory->alias)
             ->count();
     }
+
+    public function getLastByForumCategory(ForumCategory $forumCategory, int $size): Collection
+    {
+        return ForumTopic::query()
+            ->where('forum_category_id', '=', $forumCategory->id)
+            ->orderBy('created_at', 'DESC')
+            ->limit($size)
+            ->get();
+    }
 }

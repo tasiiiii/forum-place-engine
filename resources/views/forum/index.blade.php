@@ -84,24 +84,18 @@
                         <!-- TABLE COLUMN -->
                         <div class="table-column centered padded-medium">
                             <!-- TABLE TITLE -->
-                            <p class="table-title">236</p>
+                            <p class="table-title">{{ $item->getMessagesCounter() }}</p>
                             <!-- /TABLE TITLE -->
                         </div>
                         <!-- /TABLE COLUMN -->
 
                         <!-- TABLE COLUMN -->
                         <div class="table-column padded-big-left">
+                            @foreach($item->getLastForumTopics() as $lastTopic)
                             <!-- TABLE LINK -->
-                            <a class="table-link" href="forums-discussion.html">What's your favourite food in the world?</a>
+                            <a class="table-link" href="{{ $lastTopic->getLink() }}">{{ $lastTopic->getTitle() }}</a>
                             <!-- /TABLE LINK -->
-
-                            <!-- TABLE LINK -->
-                            <a class="table-link" href="forums-discussion.html">Share a picture of your city or town and let's travel together!</a>
-                            <!-- /TABLE LINK -->
-
-                            <!-- TABLE LINK -->
-                            <a class="table-link" href="forums-discussion.html">Do you think we'll ever get flying cars in the future?</a>
-                            <!-- /TABLE LINK -->
+                            @endforeach
                         </div>
                         <!-- /TABLE COLUMN -->
                     </div>
