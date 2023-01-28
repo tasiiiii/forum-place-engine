@@ -11,9 +11,10 @@ use Illuminate\Database\Eloquent\Collection;
 
 class ForumTopicRepository implements ForumTopicRepositoryInterface
 {
-    public function getWithPagination(int $size): LengthAwarePaginator
+    public function getWithPagination(ForumCategory $forumCategory, int $size): LengthAwarePaginator
     {
         return ForumTopic::query()
+            ->where('forum_category_id', '=', $forumCategory->id)
             ->where('status', '=', ForumTopicStatusEnum::Published->value)
             ->orderBy('created_at', 'DESC')
             ->paginate($size);

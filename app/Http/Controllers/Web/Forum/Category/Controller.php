@@ -23,8 +23,9 @@ class Controller extends BaseController
             $forumTopicPinnedViewData[] = $this->forumTopicViewBuilder->build($forumTopic);
         }
 
-        return view('forum.category', [
+        return view('forum.category.category', [
             'forumTopicPinnedViewData' => $forumTopicPinnedViewData,
+            'alias'                    => $alias,
         ]);
     }
 }
