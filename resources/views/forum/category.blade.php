@@ -117,7 +117,7 @@
                     <!-- TABLE COLUMN -->
                     <div class="table-column centered padded-medium">
                         <!-- TABLE TITLE -->
-                        <p class="table-title">398</p>
+                        <p class="table-title">{{ $forumTopicPinned->getMessagesCounter() }}</p>
                         <!-- /TABLE TITLE -->
                     </div>
                     <!-- /TABLE COLUMN -->
@@ -125,13 +125,14 @@
                     <!-- TABLE COLUMN -->
                     <div class="table-column centered padded-medium">
                         <!-- TABLE TITLE -->
-                        <p class="table-title">941</p>
+                        <p class="table-title">0</p>
                         <!-- /TABLE TITLE -->
                     </div>
                     <!-- /TABLE COLUMN -->
 
                     <!-- TABLE COLUMN -->
                     <div class="table-column padded-big-left">
+                        @if($forumTopicPinned->getActivityViewData())
                         <!-- USER STATUS -->
                         <div class="user-status">
                             <!-- USER STATUS AVATAR -->
@@ -141,7 +142,7 @@
                                     <!-- USER AVATAR CONTENT -->
                                     <div class="user-avatar-content">
                                         <!-- HEXAGON -->
-                                        <div class="hexagon-image-30-32" data-src="{{ $forumTopicPinned->getCreatorAvatar() }}"></div>
+                                        <div class="hexagon-image-30-32" data-src="{{ $forumTopicPinned->getActivityViewData()->getAvatar() }}"></div>
                                         <!-- /HEXAGON -->
                                     </div>
                                     <!-- /USER AVATAR CONTENT -->
@@ -191,14 +192,15 @@
                             <!-- /USER STATUS AVATAR -->
 
                             <!-- USER STATUS TITLE -->
-                            <p class="user-status-title"><a class="bold" href="#">Neko Bebop</a></p>
+                            <p class="user-status-title"><a class="bold" href="#">{{ $forumTopicPinned->getActivityViewData()->getUsername() }}</a></p>
                             <!-- /USER STATUS TITLE -->
 
                             <!-- USER STATUS TEXT -->
-                            <p class="user-status-text small">1 hour, 36 minutes ago</p>
+                            <p class="user-status-text small">{{ $forumTopicPinned->getActivityViewData()->getCreatedAt() }}</p>
                             <!-- /USER STATUS TEXT -->
                         </div>
                         <!-- /USER STATUS -->
+                        @endif
                     </div>
                     <!-- /TABLE COLUMN -->
                 </div>

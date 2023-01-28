@@ -5,21 +5,24 @@ namespace App\Http\Controllers\Ajax\Forum\TopicList;
 use App\ForumPlaceEngine\ForumTopic\Repository\ForumTopicRepositoryInterface;
 use App\Http\Controllers\BaseController;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Response;
 
 class Controller extends BaseController
 {
-    private const PAGE_SIZE = 15;
+    private int $paginationDefaultPageSize;
 
     public function __construct(
         private readonly ForumTopicRepositoryInterface $forumTopicRepository,
         private readonly OutputService                 $outputService
     )
-    {}
+    {
+        $this->paginationDefaultPageSize = App::configPath('app.pagination_default_page_size');
+    }
 
     public function run(): JsonResponse
     {
-        $forumTopics = $this->forumTopicRepository->getWithPagination(self::PAGE_SIZE);
+        $forumTopics = $this->forumTopicRepository->getWithPagination($this->paginationDefaultPageSize);
 
         $data = [];
         foreach ($forumTopics as $forumTopic) {

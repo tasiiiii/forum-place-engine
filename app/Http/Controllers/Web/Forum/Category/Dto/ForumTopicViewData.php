@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Web\Forum\Category\Dto;
 
 class ForumTopicViewData
 {
-    private string $title;
-    private string $creator;
-    private string $createdAt;
-    private string $creatorAvatar;
+    private string            $title;
+    private string            $creator;
+    private string            $createdAt;
+    private string            $creatorAvatar;
+    private int               $messagesCounter;
+    private ?ActivityViewData $activityViewData;
 
     public function getTitle(): string
     {
@@ -53,6 +55,30 @@ class ForumTopicViewData
     public function setCreatorAvatar(string $creatorAvatar): self
     {
         $this->creatorAvatar = $creatorAvatar;
+
+        return $this;
+    }
+
+    public function getMessagesCounter(): int
+    {
+        return $this->messagesCounter;
+    }
+
+    public function setMessagesCounter(int $messagesCounter): self
+    {
+        $this->messagesCounter = $messagesCounter;
+
+        return $this;
+    }
+
+    public function getActivityViewData(): ?ActivityViewData
+    {
+        return $this->activityViewData;
+    }
+
+    public function setActivityViewData(?ActivityViewData $activityViewData): self
+    {
+        $this->activityViewData = $activityViewData;
 
         return $this;
     }

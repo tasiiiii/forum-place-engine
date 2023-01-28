@@ -43,4 +43,12 @@ class ForumTopicRepository implements ForumTopicRepositoryInterface
             ->limit($size)
             ->get();
     }
+
+    public function countMessagesInTopic(ForumTopic $forumTopic): int
+    {
+        return ForumTopic::query()
+            ->where('forum_topics.id', '=', $forumTopic->id)
+            ->join('forum_messages', 'forum_topics.id', '=', 'forum_messages.forum_topic_id')
+            ->count();
+    }
 }

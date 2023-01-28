@@ -125,6 +125,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'pagination_page_default_size' => env('PAGINATION_DEFAULT_PAGE_SIZE', 15),
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
