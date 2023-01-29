@@ -1,17 +1,18 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- bootstrap 4.3.1 -->
     <link rel="stylesheet" href="/css/vendor/bootstrap.min.css">
+    <!-- styles -->
     <link rel="stylesheet" href="/css/styles.min.css">
+    <!-- simplebar styles -->
     <link rel="stylesheet" href="/css/vendor/simplebar.css">
+    <!-- tiny-slider styles -->
+    <link rel="stylesheet" href="/css/vendor/tiny-slider.css">
+    <!-- favicon -->
     <link rel="icon" href="/img/favicon.ico">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
-
     <title>@yield('title')</title>
 </head>
 <body>
@@ -2872,86 +2873,23 @@
     </aside>
     <!-- /FLOATY BAR -->
 
-    <div class="content-grid">
-        <!-- SECTION BANNER -->
-        <div class="section-banner">
-            <!-- SECTION BANNER ICON -->
-            <img class="section-banner-icon" src="/img/banner/forums-icon.png" alt="forums-icon">
-            <!-- /SECTION BANNER ICON -->
-
-            <!-- SECTION BANNER TITLE -->
-            <p class="section-banner-title">{{ config('app.name') }}</p>
-            <!-- /SECTION BANNER TITLE -->
-
-            <!-- SECTION BANNER TEXT -->
-            <p class="section-banner-text" style="font-family: 'Fira Sans', sans-serif;">Форум посвященный социальной инженерии</p>
-            <!-- /SECTION BANNER TEXT -->
-        </div>
-        <!-- /SECTION BANNER -->
-
-        <!-- SECTION FILTERS BAR -->
-        <div class="section-filters-bar v7">
-            <!-- SECTION FILTERS BAR ACTIONS -->
-            <div class="section-filters-bar-actions">
-                <!-- SECTION FILTERS BAR INFO -->
-                <div class="section-filters-bar-info">
-                    <!-- SECTION FILTERS BAR TITLE -->
-                    <p class="section-filters-bar-title"><a href="/">{{ config('app.name') }}</a></p>
-                    <!-- /SECTION FILTERS BAR TITLE -->
-                </div>
-                <!-- /SECTION FILTERS BAR INFO -->
-            </div>
-            <!-- /SECTION FILTERS BAR ACTIONS -->
-
-            <!-- SECTION FILTERS BAR ACTIONS -->
-            <div class="section-filters-bar-actions">
-                <!-- FORM -->
-                <form class="form">
-                    <!-- FORM ITEM -->
-                    <div class="form-item split">
-                        <!-- FORM INPUT -->
-                        <div class="form-input small">
-                            <label for="forum-search">Поиск...</label>
-                            <input type="text" id="forum-search" name="forum_search">
-                        </div>
-                        <!-- /FORM INPUT -->
-
-                        <!-- BUTTON -->
-                        <button class="button primary">
-                            <!-- ICON MAGNIFYING GLASS -->
-                            <svg class="icon-magnifying-glass">
-                                <use xlink:href="#svg-magnifying-glass"></use>
-                            </svg>
-                            <!-- /ICON MAGNIFYING GLASS -->
-                        </button>
-                        <!-- /BUTTON -->
-                    </div>
-                    <!-- /FORM ITEM -->
-                </form>
-                <!-- /FORM -->
-            </div>
-            <!-- /SECTION FILTERS BAR ACTIONS -->
-        </div>
-        <!-- /SECTION FILTERS BAR -->
-
-        @yield('content')
-
-    </div>
+    @yield('content')
 
     <script src="/js/utils/app.js"></script>
     <script src="/js/utils/page-loader.js"></script>
     <script src="/js/vendor/simplebar.min.js"></script>
     <script src="/js/utils/liquidify.js"></script>
     <script src="/js/vendor/xm_plugins.min.js"></script>
+    <script src="/js/vendor/tiny-slider.min.js"></script>
+    <script src="/js/vendor/Chart.bundle.min.js"></script>
     <script src="/js/global/global.hexagons.js"></script>
     <script src="/js/global/global.tooltips.js"></script>
+    <script src="/js/global/global.charts.js"></script>
     <script src="/js/header/header.js"></script>
     <script src="/js/sidebar/sidebar.js"></script>
     <script src="/js/content/content.js"></script>
     <script src="/js/form/form.utils.js"></script>
     <script src="/js/utils/svg-loader.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
     @yield('js')
 </body>
-</html>
