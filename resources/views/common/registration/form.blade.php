@@ -46,9 +46,9 @@
                             <button type="submit" class="button full secondary" style="font-family: 'Russo One', sans-serif;">Войти</button>
                             <!-- /BUTTON -->
                         </div>
-                        @if($errorMessage)
+                        @if(\Illuminate\Support\Facades\Session::has(\App\UI\Flash\Enum\FlashEnum::Error->value))
                             <div class="alert alert-danger" style="margin-top: 10px;">
-                                {{ $errorMessage }}
+                                {{ \Illuminate\Support\Facades\Session::get(\App\UI\Flash\Enum\FlashEnum::Error->value) }}
                             </div>
                         @endif
                         <div style="margin-top: 30px; text-align: center;">

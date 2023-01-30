@@ -23,26 +23,23 @@ class Controller extends BaseController
     {
         return view('common.registration.form', [
             'registrationData' => new RegistrationData(),
-            'errorMessage'     => '',
         ]);
     }
 
     public function form(Request $request): View|RedirectResponse
     {
         $registrationData = $request->getData();
-        $errorMessage     = '';
 
         try {
             $this->registrationAction->run($registrationData);
             Session::flash(FlashEnum::Success->value, 'Аккаунт успешно создан');
             return redirect()->route('login_show');
         } catch (ApplicationException $e) {
-            $errorMessage = $e->getMessage();
+            Session::flash(FlashEnum::Error->value, $e->getMessage());
         }
 
         return view('common.registration.form', [
             'registrationData' => $registrationData,
-            'errorMessage'     => $errorMessage,
         ]);
     }
 }
