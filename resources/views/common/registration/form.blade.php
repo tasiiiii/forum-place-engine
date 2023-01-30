@@ -14,7 +14,7 @@
                 <!-- WIDGET BOX CONTENT -->
                 <div class="widget-box-content">
                     <!-- FORM -->
-                    <form method="POST" action="{{ route('registration_form') }}" class="form" >
+                    <form method="POST" action="{{ route('registration_form') }}" class="form">
                         @csrf
                         <div class="form-input small">
                             <label for="name" style="font-family: 'Fira Sans', sans-serif;">Никнейм</label>
@@ -75,6 +75,8 @@
         const NameChecker = {
             name: '#name',
             nameAlert: '#nameAlert',
+            form: 'form',
+            exist: false,
             init: (e) => {
                 const name = $(NameChecker.name).val();
 
@@ -85,7 +87,9 @@
                         name: name
                     },
                     success: res => {
-                        if (res.data.exist) {
+                        NameChecker.exist = res.data.exist;
+
+                        if (NameChecker.exist) {
                             $(NameChecker.nameAlert).show();
                         } else {
                             $(NameChecker.nameAlert).hide();
@@ -96,6 +100,11 @@
         }
 
         $(document).ready(e => {
+            $(NameChecker.form).submit(e => {
+                if (NameChecker.exist) {
+                    e.preventDefault();
+                }
+            });
             $(NameChecker.name).keyup(NameChecker.init);
         });
     </script>
