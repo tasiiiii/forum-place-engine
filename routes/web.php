@@ -21,6 +21,7 @@ Route::group(['prefix' => 'profile'], function () {
 
 Route::group(['prefix' => 'login'], function () {
     Route::get('', [\App\Http\Controllers\Web\Common\Login\Controller::class, 'page'])->name('login_show');
+    Route::post('', [\App\Http\Controllers\Web\Common\Login\Controller::class, 'form'])->name('login_form');
 });
 Route::group(['prefix' => 'registration'], function () {
     Route::get('', [\App\Http\Controllers\Web\Common\Registration\Controller::class, 'page'])->name('registration_show');

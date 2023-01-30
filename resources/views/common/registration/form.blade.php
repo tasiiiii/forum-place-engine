@@ -44,7 +44,7 @@
                         </div>
                         <div class="form-item" style="margin-top: 10px;">
                             <!-- BUTTON -->
-                            <button type="submit" class="button full secondary" style="font-family: 'Russo One', sans-serif;">Войти</button>
+                            <button type="submit" class="button full secondary" style="font-family: 'Russo One', sans-serif;">Регистрация</button>
                             <!-- /BUTTON -->
                         </div>
                         @if(\Illuminate\Support\Facades\Session::has(\App\UI\Flash\Enum\FlashEnum::Error->value))
