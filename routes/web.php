@@ -19,6 +19,14 @@ Route::group(['prefix' => 'profile'], function () {
     Route::get('', [\App\Http\Controllers\Web\Common\Profile\Show\Controller::class, 'run'])->name('profile_show');
 });
 
+Route::group(['prefix' => 'login'], function () {
+    Route::get('', [\App\Http\Controllers\Web\Common\Login\Controller::class, 'page'])->name('login_show');
+});
+Route::group(['prefix' => 'registration'], function () {
+    Route::get('', [\App\Http\Controllers\Web\Common\Registration\Controller::class, 'page'])->name('registration_show');
+    Route::post('', [\App\Http\Controllers\Web\Common\Registration\Controller::class, 'form'])->name('registration_form');
+});
+
 Route::group(['prefix' => 'forum'], function () {
     Route::get('category/{alias}', [\App\Http\Controllers\Web\Forum\Category\Controller::class, 'run'])->name('forum_category');
     Route::get('topic/{id}', [\App\Http\Controllers\Web\Forum\Topic\Show\Controller::class, 'run'])->name('forum_topic_show');

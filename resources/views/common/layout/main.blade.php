@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="/css/vendor/tiny-slider.css">
     <!-- favicon -->
     <link rel="icon" href="/img/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
     <title>@yield('title')</title>
 </head>
 <body>
@@ -57,57 +63,63 @@
 
     <!-- NAVIGATION WIDGET -->
     <nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
-        <!-- USER AVATAR -->
-        <a class="user-avatar small no-outline online" href="{{ route('profile_show') }}">
-            <!-- USER AVATAR CONTENT -->
-            <div class="user-avatar-content">
-                <!-- HEXAGON -->
-                <div class="hexagon-image-30-32" data-src="img/avatar/01.jpg"></div>
-                <!-- /HEXAGON -->
+        @if(\Illuminate\Support\Facades\Auth::guest())
+            <div style="text-align: center;">
+                <a href="{{ route('login_show') }}" class="btn btn-success" style="font-family: 'Russo One', sans-serif;">Вход</a>
             </div>
-            <!-- /USER AVATAR CONTENT -->
-
-            <!-- USER AVATAR PROGRESS -->
-            <div class="user-avatar-progress">
-                <!-- HEXAGON -->
-                <div class="hexagon-progress-40-44"></div>
-                <!-- /HEXAGON -->
-            </div>
-            <!-- /USER AVATAR PROGRESS -->
-
-            <!-- USER AVATAR PROGRESS BORDER -->
-            <div class="user-avatar-progress-border">
-                <!-- HEXAGON -->
-                <div class="hexagon-border-40-44"></div>
-                <!-- /HEXAGON -->
-            </div>
-            <!-- /USER AVATAR PROGRESS BORDER -->
-
-            <!-- USER AVATAR BADGE -->
-            <div class="user-avatar-badge">
-                <!-- USER AVATAR BADGE BORDER -->
-                <div class="user-avatar-badge-border">
+        @else
+            <!-- USER AVATAR -->
+            <a class="user-avatar small no-outline online" href="{{ route('profile_show') }}">
+                <!-- USER AVATAR CONTENT -->
+                <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-22-24"></div>
+                    <div class="hexagon-image-30-32" data-src="/img/avatar/01.jpg"></div>
                     <!-- /HEXAGON -->
                 </div>
-                <!-- /USER AVATAR BADGE BORDER -->
+                <!-- /USER AVATAR CONTENT -->
 
-                <!-- USER AVATAR BADGE CONTENT -->
-                <div class="user-avatar-badge-content">
+                <!-- USER AVATAR PROGRESS -->
+                <div class="user-avatar-progress">
                     <!-- HEXAGON -->
-                    <div class="hexagon-dark-16-18"></div>
+                    <div class="hexagon-progress-40-44"></div>
                     <!-- /HEXAGON -->
                 </div>
-                <!-- /USER AVATAR BADGE CONTENT -->
+                <!-- /USER AVATAR PROGRESS -->
 
-                <!-- USER AVATAR BADGE TEXT -->
-                <p class="user-avatar-badge-text">24</p>
-                <!-- /USER AVATAR BADGE TEXT -->
-            </div>
-            <!-- /USER AVATAR BADGE -->
-        </a>
-        <!-- /USER AVATAR -->
+                <!-- USER AVATAR PROGRESS BORDER -->
+                <div class="user-avatar-progress-border">
+                    <!-- HEXAGON -->
+                    <div class="hexagon-border-40-44"></div>
+                    <!-- /HEXAGON -->
+                </div>
+                <!-- /USER AVATAR PROGRESS BORDER -->
+
+                <!-- USER AVATAR BADGE -->
+                <div class="user-avatar-badge">
+                    <!-- USER AVATAR BADGE BORDER -->
+                    <div class="user-avatar-badge-border">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-22-24"></div>
+                        <!-- /HEXAGON -->
+                    </div>
+                    <!-- /USER AVATAR BADGE BORDER -->
+
+                    <!-- USER AVATAR BADGE CONTENT -->
+                    <div class="user-avatar-badge-content">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-dark-16-18"></div>
+                        <!-- /HEXAGON -->
+                    </div>
+                    <!-- /USER AVATAR BADGE CONTENT -->
+
+                    <!-- USER AVATAR BADGE TEXT -->
+                    <p class="user-avatar-badge-text">24</p>
+                    <!-- /USER AVATAR BADGE TEXT -->
+                </div>
+                <!-- /USER AVATAR BADGE -->
+            </a>
+            <!-- /USER AVATAR -->
+        @endif
 
         <!-- MENU -->
         <ul class="menu small">

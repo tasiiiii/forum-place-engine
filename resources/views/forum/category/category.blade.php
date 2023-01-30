@@ -3,6 +3,7 @@
 @section('title', 'Forum | Категория')
 
 @section('content')
+    @if(!empty($forumTopicPinnedViewData))
     <!-- TABLE -->
     <div class="table table-forum-discussion">
         <!-- TABLE HEADER -->
@@ -48,6 +49,7 @@
         <!-- /TABLE BODY -->
     </div>
     <!-- /TABLE -->
+    @endif
 
     <!-- TABLE -->
     <div class="table table-forum-discussion">

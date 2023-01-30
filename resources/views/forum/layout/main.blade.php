@@ -60,7 +60,7 @@
     <nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
         @if(\Illuminate\Support\Facades\Auth::guest())
             <div style="text-align: center;">
-                <a href="#" class="btn btn-success" style="font-family: 'Russo One', sans-serif;">Вход</a>
+                <a href="{{ route('login_show') }}" class="btn btn-success" style="font-family: 'Russo One', sans-serif;">Вход</a>
             </div>
         @else
             <!-- USER AVATAR -->
