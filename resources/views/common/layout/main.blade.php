@@ -2902,6 +2902,7 @@
     <script src="/js/content/content.js"></script>
     <script src="/js/form/form.utils.js"></script>
     <script src="/js/utils/svg-loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
     @yield('js')
 </body>

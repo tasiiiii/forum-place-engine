@@ -17,8 +17,9 @@
                     <form method="POST" action="{{ route('registration_form') }}" class="form" >
                         @csrf
                         <div class="form-input small">
-                            <label for="name" style="font-family: 'Fira Sans', sans-serif;">Никнейм (Будет виден остальным пользователем)</label>
+                            <label for="name" style="font-family: 'Fira Sans', sans-serif;">Никнейм</label>
                             <input type="text" id="name" name="name" value="{{ $registrationData->getName() }}">
+                            <span id="nameAlert" style="display: none; color: red; font-family: 'Fira Sans', sans-serif;">Никнейм занят</span>
                             @error('name')
                                 <span style="color: red; font-family: 'Fira Sans', sans-serif;">{{ $message }}</span>
                             @enderror
@@ -67,4 +68,35 @@
             <!-- /WIDGET BOX -->
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script>
+        const NameChecker = {
+            name: '#name',
+            nameAlert: '#nameAlert',
+            init: (e) => {
+                const name = $(NameChecker.name).val();
+
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('name_checker_ajax') }}',
+                    data: {
+                        name: name
+                    },
+                    success: res => {
+                        if (res.data.exist) {
+                            $(NameChecker.nameAlert).show();
+                        } else {
+                            $(NameChecker.nameAlert).hide();
+                        }
+                    }
+                })
+            }
+        }
+
+        $(document).ready(e => {
+            $(NameChecker.name).keyup(NameChecker.init);
+        });
+    </script>
 @endsection
