@@ -68,7 +68,7 @@
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/img/avatar/01.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="{{ \Illuminate\Support\Facades\Auth::user()->avatar }}"></div>
                     <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->

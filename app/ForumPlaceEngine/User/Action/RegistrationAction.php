@@ -33,8 +33,8 @@ class RegistrationAction
 
         $user                   = new User();
         $user->name             = $data->getName();
-        $user->avatar           = '/upload/user/avatar/default.png';
-        $user->background_image = '/upload/user/background/default.png';
+        $user->avatar           = '/uploads/avatars/default.png';
+        $user->background_image = '/uploads/backgrounds/default.png';
         $user->email            = $data->getEmail();
         $user->password         = Hash::make($data->getPassword());
         $user->status           = UserStatusEnum::Active->value;
