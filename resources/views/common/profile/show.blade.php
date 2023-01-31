@@ -1101,7 +1101,7 @@
                                         <!-- META LINE -->
                                         <div class="meta-line">
                                             <!-- META LINE LINK -->
-                                            <p class="meta-line-link">8 Comments</p>
+                                            <p class="meta-line-link" style="font-family: 'Fira Sans', sans-serif;">{{ $topic->getTopicMessagesCounter() }} Сообщения</p>
                                             <!-- /META LINE LINK -->
                                         </div>
                                         <!-- /META LINE -->
@@ -1109,7 +1109,7 @@
                                         <!-- META LINE -->
                                         <div class="meta-line">
                                             <!-- META LINE TEXT -->
-                                            <p class="meta-line-text">0 Shares</p>
+                                            <p class="meta-line-text" style="font-family: 'Fira Sans', sans-serif;">{{ $topic->getShareCounter() }} Поделились</p>
                                             <!-- /META LINE TEXT -->
                                         </div>
                                         <!-- /META LINE -->
