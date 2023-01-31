@@ -11,6 +11,8 @@ class ProfileViewData
     private int    $friendsCounter;
     private int    $visitsCounter;
     private string $biography;
+    /** @var TopicViewData[] */
+    private array  $topics;
 
     public function getName(): string
     {
@@ -92,6 +94,18 @@ class ProfileViewData
     public function setBiography(string $biography): self
     {
         $this->biography = $biography;
+
+        return $this;
+    }
+
+    public function getTopics(): array
+    {
+        return $this->topics;
+    }
+
+    public function setTopics(array $topics): self
+    {
+        $this->topics = $topics;
 
         return $this;
     }

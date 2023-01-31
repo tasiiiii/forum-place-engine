@@ -15,5 +15,5 @@ interface ForumTopicRepositoryInterface
     public function countTopicsInForumCategory(ForumCategory $forumCategory): int;
     public function getLastByForumCategory(ForumCategory $forumCategory, int $size): Collection;
     public function countMessagesInTopic(ForumTopic $forumTopic): int;
-    public function countTopicsForCreator(User $user): int;
+    public function getByCreator(User $creator): Collection;
 }

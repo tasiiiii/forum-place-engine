@@ -54,10 +54,10 @@ class ForumTopicRepository implements ForumTopicRepositoryInterface
             ->count();
     }
 
-    public function countTopicsForCreator(User $user): int
+    public function getByCreator(User $creator): Collection
     {
         return ForumTopic::query()
-            ->where('creator_id', '=', $user->id)
-            ->count();
+            ->where('creator_id', '=', $creator->id)
+            ->get();
     }
 }

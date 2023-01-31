@@ -5,11 +5,13 @@ namespace App\Providers;
 use App\ForumPlaceEngine\ForumCategory\ForumCategoryRepositoryInterface;
 use App\ForumPlaceEngine\ForumMessage\Repository\ForumMessageRepositoryInterface;
 use App\ForumPlaceEngine\ForumSection\Repository\ForumSectionRepositoryInterface;
+use App\ForumPlaceEngine\ForumTopic\Repository\ForumTopicReactionRepositoryInterface;
 use App\ForumPlaceEngine\ForumTopic\Repository\ForumTopicRepositoryInterface;
 use App\ForumPlaceEngine\User\Repository\UserRepositoryInterface;
 use App\Repository\ForumCategoryRepository;
 use App\Repository\ForumMessageRepository;
 use App\Repository\ForumSectionRepository;
+use App\Repository\ForumTopicReactionRepository;
 use App\Repository\ForumTopicRepository;
 use App\Repository\UserRepository;
 use Illuminate\Support\ServiceProvider;
@@ -23,6 +25,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ForumMessageRepositoryInterface::class, ForumMessageRepository::class);
         $this->app->bind(ForumCategoryRepositoryInterface::class, ForumCategoryRepository::class);
         $this->app->bind(UserRepositoryInterface::class, UserRepository::class);
+        $this->app->bind(ForumTopicReactionRepositoryInterface::class, ForumTopicReactionRepository::class);
     }
 
     public function boot(): void
