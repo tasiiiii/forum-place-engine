@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Ajax\Forum\TopicList;
+namespace App\Http\Controllers\Ajax\Forum\Topic\ShowList;
 
 use App\ForumPlaceEngine\ForumCategory\ForumCategoryRepositoryInterface;
 use App\ForumPlaceEngine\ForumTopic\Repository\ForumTopicRepositoryInterface;
@@ -9,7 +9,6 @@ use App\Http\Controllers\Web\Forum\Category\ForumTopicViewBuilder;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Response;
-use function Termwind\render;
 
 class Controller extends BaseController
 {

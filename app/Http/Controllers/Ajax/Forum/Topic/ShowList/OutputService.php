@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Ajax\Forum\TopicList;
+namespace App\Http\Controllers\Ajax\Forum\Topic\ShowList;
 
 use App\Http\Controllers\Web\Forum\Category\ForumTopicViewBuilder;
 use App\Models\ForumTopic;
