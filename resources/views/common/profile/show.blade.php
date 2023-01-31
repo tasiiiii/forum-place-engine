@@ -1135,7 +1135,7 @@
                                     <!-- /POST OPTION ICON -->
 
                                     <!-- POST OPTION TEXT -->
-                                    <p class="post-option-text">React!</p>
+                                    <p class="post-option-text" style="font-family: 'Fira Sans', sans-serif;">Реакция!</p>
                                     <!-- /POST OPTION TEXT -->
                                 </div>
                                 <!-- /POST OPTION -->
@@ -1219,7 +1219,7 @@
                                 <!-- /POST OPTION ICON -->
 
                                 <!-- POST OPTION TEXT -->
-                                <p class="post-option-text">Comment</p>
+                                <p class="post-option-text" style="font-family: 'Fira Sans', sans-serif;">Подробнее</p>
                                 <!-- /POST OPTION TEXT -->
                             </div>
                             <!-- /POST OPTION -->
@@ -1233,7 +1233,7 @@
                                 <!-- /POST OPTION ICON -->
 
                                 <!-- POST OPTION TEXT -->
-                                <p class="post-option-text">Share</p>
+                                <p class="post-option-text" style="font-family: 'Fira Sans', sans-serif;">Поделиться</p>
                                 <!-- /POST OPTION TEXT -->
                             </div>
                             <!-- /POST OPTION -->
