@@ -6,6 +6,7 @@ use App\ForumPlaceEngine\ForumTopic\Enum\ForumTopicStatusEnum;
 use App\ForumPlaceEngine\ForumTopic\Repository\ForumTopicRepositoryInterface;
 use App\Models\ForumCategory;
 use App\Models\ForumTopic;
+use App\Models\User;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Collection;
 
@@ -50,6 +51,13 @@ class ForumTopicRepository implements ForumTopicRepositoryInterface
         return ForumTopic::query()
             ->where('forum_topics.id', '=', $forumTopic->id)
             ->join('forum_messages', 'forum_topics.id', '=', 'forum_messages.forum_topic_id')
+            ->count();
+    }
+
+    public function countTopicsForCreator(User $user): int
+    {
+        return ForumTopic::query()
+            ->where('creator_id', '=', $user->id)
             ->count();
     }
 }
