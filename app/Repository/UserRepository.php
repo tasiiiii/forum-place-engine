@@ -7,6 +7,11 @@ use App\Models\User;
 
 class UserRepository implements UserRepositoryInterface
 {
+    public function getById(int $id): ?User
+    {
+        return User::query()->find($id);
+    }
+
     public function getByName(string $name): ?User
     {
         return User::query()

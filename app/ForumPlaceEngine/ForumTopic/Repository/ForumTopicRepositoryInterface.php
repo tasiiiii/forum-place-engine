@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 interface ForumTopicRepositoryInterface
 {
+    public function getById(int $id): ?ForumTopic;
     public function getWithPagination(ForumCategory $forumCategory, int $size): LengthAwarePaginator;
     public function getPinnedForForumCategory(string $forumCategoryAlias): Collection;
     public function countTopicsInForumCategory(ForumCategory $forumCategory): int;

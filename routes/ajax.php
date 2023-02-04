@@ -8,4 +8,5 @@ Route::group(['prefix' => 'registration'], function () {
 
 Route::group(['prefix' => 'forum'], function () {
     Route::get('topic-list/{alias}', [\App\Http\Controllers\Ajax\Forum\Topic\ShowList\Controller::class, 'run'])->name('topic_list_ajax');
+    Route::post('topic/reaction/create', [\App\Http\Controllers\Ajax\Forum\Topic\Reaction\Create\Controller::class, 'run'])->name('create_topic_reaction');
 });

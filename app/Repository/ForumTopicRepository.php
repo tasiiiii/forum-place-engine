@@ -12,6 +12,11 @@ use Illuminate\Database\Eloquent\Collection;
 
 class ForumTopicRepository implements ForumTopicRepositoryInterface
 {
+    public function getById(int $id): ?ForumTopic
+    {
+        return ForumTopic::query()->find($id);
+    }
+
     public function getWithPagination(ForumCategory $forumCategory, int $size): LengthAwarePaginator
     {
         return ForumTopic::query()

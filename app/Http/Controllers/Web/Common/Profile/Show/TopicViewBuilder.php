@@ -17,6 +17,7 @@ class TopicViewBuilder
     public function build(ForumTopic $forumTopic): TopicViewData
     {
         return (new TopicViewData())
+            ->setId($forumTopic->id)
             ->setCreatorName($forumTopic->creator->name)
             ->setCreatorAvatar($forumTopic->creator->avatar)
             ->setShortContent($forumTopic->content)

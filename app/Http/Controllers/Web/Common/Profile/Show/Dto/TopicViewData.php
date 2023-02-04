@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Common\Profile\Show\Dto;
 
 class TopicViewData
 {
+    private int    $id;
     private string $creatorName;
     private string $creatorAvatar;
     private string $shortContent;
@@ -12,6 +13,18 @@ class TopicViewData
     private string $createdAt;
     /** @var TopicReactionData[] */
     private array  $topicReactions = [];
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     public function getCreatorName(): string
     {

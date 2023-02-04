@@ -1141,7 +1141,7 @@
                                 <!-- /POST OPTION -->
 
                                 <!-- REACTION OPTIONS -->
-                                <div class="reaction-options reaction-options-dropdown">
+                                <div class="reaction-options reaction-options-dropdown" data-forum-topic-id="{{ $topic->getId() }}">
                                     <!-- REACTION OPTION -->
                                     <div class="reaction-option text-tooltip-tft" data-title="Like">
                                         <!-- REACTION OPTION IMAGE -->
@@ -1517,4 +1517,25 @@
         <!-- /GRID -->
     </div>
     <!-- /CONTENT GRID -->
+@endsection
+
+@section('js')
+    <script>
+        const Elements = {
+            reactionOption: '.reaction-option'
+        }
+
+        const TopicManager = {
+            setReaction: e => {
+                const target = $(e.target);
+                console.log(target);
+            }
+        };
+
+        $(document).ready(e => {
+            $(Elements.reactionOption).click(e => {
+                TopicManager.setReaction(e);
+            });
+        });
+    </script>
 @endsection
