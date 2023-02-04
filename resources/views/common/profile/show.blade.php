@@ -1065,7 +1065,7 @@
                                         <!-- META LINE -->
                                         <div class="meta-line">
                                             <!-- META LINE LIST -->
-                                            <div class="meta-line-list reaction-item-list">
+                                            <div class="meta-line-list reaction-item-list" data-forum-topic-id="{{ $topic->getId() }}">
                                                 @foreach($topic->getTopicReactions() as $topicReaction)
                                                 <!-- REACTION ITEM -->
                                                 <div class="reaction-item">
@@ -1145,7 +1145,7 @@
                                     <!-- REACTION OPTION -->
                                     <div class="reaction-option text-tooltip-tft" data-title="Like">
                                         <!-- REACTION OPTION IMAGE -->
-                                        <img class="reaction-option-image" src="img/reaction/like.png" alt="reaction-like">
+                                        <img class="reaction-option-image" src="/img/reaction/like.png" alt="reaction-like">
                                         <!-- /REACTION OPTION IMAGE -->
                                     </div>
                                     <!-- /REACTION OPTION -->
@@ -1153,7 +1153,7 @@
                                     <!-- REACTION OPTION -->
                                     <div class="reaction-option text-tooltip-tft" data-title="Love">
                                         <!-- REACTION OPTION IMAGE -->
-                                        <img class="reaction-option-image" src="img/reaction/love.png" alt="reaction-love">
+                                        <img class="reaction-option-image" src="/img/reaction/love.png" alt="reaction-love">
                                         <!-- /REACTION OPTION IMAGE -->
                                     </div>
                                     <!-- /REACTION OPTION -->
@@ -1161,7 +1161,7 @@
                                     <!-- REACTION OPTION -->
                                     <div class="reaction-option text-tooltip-tft" data-title="Dislike">
                                         <!-- REACTION OPTION IMAGE -->
-                                        <img class="reaction-option-image" src="img/reaction/dislike.png" alt="reaction-dislike">
+                                        <img class="reaction-option-image" src="/img/reaction/dislike.png" alt="reaction-dislike">
                                         <!-- /REACTION OPTION IMAGE -->
                                     </div>
                                     <!-- /REACTION OPTION -->
@@ -1169,7 +1169,7 @@
                                     <!-- REACTION OPTION -->
                                     <div class="reaction-option text-tooltip-tft" data-title="Happy">
                                         <!-- REACTION OPTION IMAGE -->
-                                        <img class="reaction-option-image" src="img/reaction/happy.png" alt="reaction-happy">
+                                        <img class="reaction-option-image" src="/img/reaction/happy.png" alt="reaction-happy">
                                         <!-- /REACTION OPTION IMAGE -->
                                     </div>
                                     <!-- /REACTION OPTION -->
@@ -1177,7 +1177,7 @@
                                     <!-- REACTION OPTION -->
                                     <div class="reaction-option text-tooltip-tft" data-title="Funny">
                                         <!-- REACTION OPTION IMAGE -->
-                                        <img class="reaction-option-image" src="img/reaction/funny.png" alt="reaction-funny">
+                                        <img class="reaction-option-image" src="/img/reaction/funny.png" alt="reaction-funny">
                                         <!-- /REACTION OPTION IMAGE -->
                                     </div>
                                     <!-- /REACTION OPTION -->
@@ -1185,7 +1185,7 @@
                                     <!-- REACTION OPTION -->
                                     <div class="reaction-option text-tooltip-tft" data-title="Wow">
                                         <!-- REACTION OPTION IMAGE -->
-                                        <img class="reaction-option-image" src="img/reaction/wow.png" alt="reaction-wow">
+                                        <img class="reaction-option-image" src="/img/reaction/wow.png" alt="reaction-wow">
                                         <!-- /REACTION OPTION IMAGE -->
                                     </div>
                                     <!-- /REACTION OPTION -->
@@ -1193,7 +1193,7 @@
                                     <!-- REACTION OPTION -->
                                     <div class="reaction-option text-tooltip-tft" data-title="Angry">
                                         <!-- REACTION OPTION IMAGE -->
-                                        <img class="reaction-option-image" src="img/reaction/angry.png" alt="reaction-angry">
+                                        <img class="reaction-option-image" src="/img/reaction/angry.png" alt="reaction-angry">
                                         <!-- /REACTION OPTION IMAGE -->
                                     </div>
                                     <!-- /REACTION OPTION -->
@@ -1201,7 +1201,7 @@
                                     <!-- REACTION OPTION -->
                                     <div class="reaction-option text-tooltip-tft" data-title="Sad">
                                         <!-- REACTION OPTION IMAGE -->
-                                        <img class="reaction-option-image" src="img/reaction/sad.png" alt="reaction-sad">
+                                        <img class="reaction-option-image" src="/img/reaction/sad.png" alt="reaction-sad">
                                         <!-- /REACTION OPTION IMAGE -->
                                     </div>
                                     <!-- /REACTION OPTION -->
@@ -1522,13 +1522,29 @@
 @section('js')
     <script>
         const Elements = {
-            reactionOption: '.reaction-option'
+            reactionOption: '.reaction-option',
+            reactionOptions: '.reaction-options',
+            reactionItemList: '.reaction-item-list'
         }
 
         const TopicManager = {
             setReaction: e => {
-                const target = $(e.target);
-                console.log(target);
+                const target          = $(e.target);
+                const reactionOptions = target.closest(Elements.reactionOptions);
+                const forumTopicId    = reactionOptions.data('forum-topic-id');
+
+                $.ajax({
+                    type: 'POST',
+                    url: '{{ route('create_topic_reaction') }}',
+                    data: {
+                        forum_topic_id: forumTopicId,
+                        reaction: target.closest(Elements.reactionOption).data('title').toLowerCase(),
+                        '_token': '{{ csrf_token() }}'
+                    },
+                    success: res => {
+                        
+                    }
+                })
             }
         };
 
