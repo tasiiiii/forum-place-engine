@@ -127,6 +127,8 @@ return [
 
     'pagination_page_default_size' => env('PAGINATION_DEFAULT_PAGE_SIZE', 15),
 
+    'email_reset_password_minutes_lifetime' => env('EMAIL_RESET_PASSWORD_MINUTES_LIFETIME', 15),
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver

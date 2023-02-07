@@ -56,9 +56,6 @@
                             <div>
                                 <a href="{{ route('login_show') }}" style="font-family: 'Fira Sans', sans-serif; color: #fff;">Есть аккаунт? Авторизация!</a>
                             </div>
-                            <div>
-                                <a href="#" style="font-family: 'Fira Sans', sans-serif; color: #fff;">Забыли пароль?</a>
-                            </div>
                         </div>
                     </form>
                     <!-- /FORM -->

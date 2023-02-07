@@ -27,6 +27,16 @@ Route::group(['prefix' => 'registration'], function () {
     Route::get('', [\App\Http\Controllers\Web\Common\Registration\Controller::class, 'page'])->name('registration_show');
     Route::post('', [\App\Http\Controllers\Web\Common\Registration\Controller::class, 'form'])->name('registration_form');
 });
+Route::group(['prefix' => 'password-reset'], function () {
+    Route::group(['prefix' => 'step-one'], function () {
+        Route::get('', [\App\Http\Controllers\Web\Common\PasswordReset\StepOne\Controller::class, 'page'])->name('password_reset_step_one_show');
+        Route::post('', [\App\Http\Controllers\Web\Common\PasswordReset\StepOne\Controller::class, 'form'])->name('password_reset_step_one_form');
+    });
+    Route::group(['prefix' => 'step-two'], function () {
+        Route::get('', [\App\Http\Controllers\Web\Common\PasswordReset\StepTwo\Controller::class, 'page'])->name('password_reset_step_two_show');
+        Route::post('', [\App\Http\Controllers\Web\Common\PasswordReset\StepTwo\Controller::class, 'form'])->name('password_reset_step_two_form');
+    });
+});
 
 Route::group(['prefix' => 'forum'], function () {
     Route::get('category/{alias}', [\App\Http\Controllers\Web\Forum\Category\Controller::class, 'run'])->name('forum_category');

@@ -50,7 +50,7 @@
                                 <a href="{{ route('registration_show') }}" style="font-family: 'Fira Sans', sans-serif; color: #fff;">Нет аккаунта? Регистрация!</a>
                             </div>
                             <div>
-                                <a href="#" style="font-family: 'Fira Sans', sans-serif; color: #fff;">Забыли пароль?</a>
+                                <a href="{{ route('password_reset_step_one_show') }}" style="font-family: 'Fira Sans', sans-serif; color: #fff;">Забыли пароль?</a>
                             </div>
                         </div>
                     </form>

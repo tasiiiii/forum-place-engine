@@ -1539,7 +1539,7 @@
             execute: (forumTopicId, reaction) => {
                 const reactionList    = $(`${Elements.reactionItemList}[data-forum-topic-id="${forumTopicId}"]`);
                 const reactionElement = reactionList.find(`[alt="reaction-${reaction}"]`);
-                
+
                 $(reactionElement.get(0)).next().append(`<p class="simple-dropdown-text">${Profile.getCurrentUsername()}</p>`);
             }
         }
