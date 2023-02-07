@@ -30,7 +30,7 @@ class PasswordResetStepTwoAction
      */
     public function run(PasswordResetStepTwoDataInterface $data): void
     {
-        $userResetPassword = $this->userResetPasswordRepository->getByHash($data->getHash());
+        $userResetPassword = $this->userResetPasswordRepository->getLastByHash($data->getHash());
         if (!isset($userResetPassword)) {
             throw new ApplicationException('Неверные данные, попробуйте еще раз');
         }

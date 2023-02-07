@@ -6,5 +6,5 @@ use App\Models\UserPasswordReset;
 
 interface UserPasswordResetRepositoryInterface
 {
-    public function getByHash(string $hash): ?UserPasswordReset;
+    public function getLastByHash(string $hash): ?UserPasswordReset;
 }

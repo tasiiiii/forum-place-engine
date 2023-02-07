@@ -7,10 +7,12 @@ use App\Models\UserPasswordReset;
 
 class UserPasswordResetRepository implements UserPasswordResetRepositoryInterface
 {
-    public function getByHash(string $hash): ?UserPasswordReset
+    public function getLastByHash(string $hash): ?UserPasswordReset
     {
         return UserPasswordReset::query()
             ->where('hash', '=', $hash)
+            ->orderByDesc('id')
+            ->limit(1)
             ->first();
     }
 }
