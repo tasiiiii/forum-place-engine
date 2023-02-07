@@ -138,7 +138,7 @@
                     <!-- /USER SHORT DESCRIPTION AVATAR -->
 
                     <!-- USER SHORT DESCRIPTION TITLE -->
-                    <p class="user-short-description-title"><a href="{{ route('profile_show') }}">{{ $profileViewData->getName() }}</a></p>
+                    <p class="user-short-description-title"><a id="username" href="{{ route('profile_show') }}">{{ $profileViewData->getName() }}</a></p>
                     <!-- /USER SHORT DESCRIPTION TITLE -->
                 </div>
                 <!-- /USER SHORT DESCRIPTION -->
@@ -1524,7 +1524,24 @@
         const Elements = {
             reactionOption: '.reaction-option',
             reactionOptions: '.reaction-options',
-            reactionItemList: '.reaction-item-list'
+            reactionItem: '.reaction-item',
+            reactionItemList: '.reaction-item-list',
+            username: '#username'
+        }
+
+        const Profile = {
+            getCurrentUsername: () => {
+                return $(Elements.username).text();
+            }
+        }
+
+        const ReactionSetter = {
+            execute: (forumTopicId, reaction) => {
+                const reactionList    = $(`${Elements.reactionItemList}[data-forum-topic-id="${forumTopicId}"]`);
+                const reactionElement = reactionList.find(`[alt="reaction-${reaction}"]`);
+                
+                $(reactionElement.get(0)).next().append(`<p class="simple-dropdown-text">${Profile.getCurrentUsername()}</p>`);
+            }
         }
 
         const TopicManager = {
@@ -1542,7 +1559,10 @@
                         '_token': '{{ csrf_token() }}'
                     },
                     success: res => {
-                        
+                        ReactionSetter.execute(forumTopicId, res.data.reaction);
+                    },
+                    error: res => {
+                        console.error(res);
                     }
                 })
             }
