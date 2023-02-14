@@ -9,7 +9,7 @@ use App\ForumPlaceEngine\User\Repository\UserPasswordResetRepositoryInterface;
 use DateInterval;
 use DateTime;
 use Exception;
-use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Hash;
 
 class PasswordResetStepTwoAction
@@ -21,7 +21,7 @@ class PasswordResetStepTwoAction
         private readonly UserPasswordResetRepositoryInterface $userResetPasswordRepository
     )
     {
-        $this->emailResetPasswordMinutesLifetime = (int) App::configPath('app.email_reset_password_minutes_lifetime');
+        $this->emailResetPasswordMinutesLifetime = (int) Config::get('app.email_reset_password_minutes_lifetime');
     }
 
     /**
@@ -31,25 +31,29 @@ class PasswordResetStepTwoAction
     public function run(PasswordResetStepTwoDataInterface $data): void
     {
         $userResetPassword = $this->userResetPasswordRepository->getLastByHash($data->getHash());
+
         if (!isset($userResetPassword)) {
             throw new ApplicationException('Неверные данные, попробуйте еще раз');
         }
 
-        $expiredTime  = (new DateTime())->add(
-            new DateInterval(sprintf('P%dM', $this->emailResetPasswordMinutesLifetime))
-        );
-        $dateInterval = $userResetPassword->created_at->diff($expiredTime);
-        if ($dateInterval->m > $this->emailResetPasswordMinutesLifetime) {
-            throw new ApplicationException('Код восстановления устарел');
+        try {
+            $expiredTime  = (new DateTime())->add(
+                new DateInterval(sprintf('P%dM', $this->emailResetPasswordMinutesLifetime))
+            );
+            $dateInterval = $userResetPassword->created_at->diff($expiredTime);
+            if ($dateInterval->m > $this->emailResetPasswordMinutesLifetime) {
+                throw new ApplicationException('Код восстановления устарел');
+            }
+
+            $user = $this->userRepository->getById($userResetPassword->user_id);
+            if (is_null($user)) {
+                throw new ApplicationException('Пользователь не найден');
+            }
+
+            $user->password = Hash::make($data->getPassword());
+            $user->save();
+        } finally {
+            $userResetPassword->delete();
         }
-
-        $user = $this->userRepository->getById($userResetPassword->user_id);
-        if (is_null($user)) {
-            throw new ApplicationException('Пользователь не найден');
-        }
-
-        $user->password = Hash::make($data->getPassword());
-
-        $user->save();
     }
 }
