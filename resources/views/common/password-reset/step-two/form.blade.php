@@ -10,7 +10,7 @@
             <p class="widget-box-title" style="font-family: 'Russo One', sans-serif;">Восстановить пароль</p>
 
             <div class="widget-box-content">
-                <form method="POST" action="{{ route('password_reset_step_two_form') }}">
+                <form method="POST" action="{{ route('password_reset_step_two_form', ['hash' => $hash]) }}">
                     @csrf
                     <div class="form-input small" style="margin-top: 10px;">
                         <label for="password" style="font-family: 'Fira Sans', sans-serif;">Пароль</label>

@@ -33,8 +33,8 @@ Route::group(['prefix' => 'password-reset'], function () {
         Route::post('', [\App\Http\Controllers\Web\Common\PasswordReset\StepOne\Controller::class, 'form'])->name('password_reset_step_one_form');
     });
     Route::group(['prefix' => 'step-two'], function () {
-        Route::get('', [\App\Http\Controllers\Web\Common\PasswordReset\StepTwo\Controller::class, 'page'])->name('password_reset_step_two_show');
-        Route::post('', [\App\Http\Controllers\Web\Common\PasswordReset\StepTwo\Controller::class, 'form'])->name('password_reset_step_two_form');
+        Route::get('{hash}', [\App\Http\Controllers\Web\Common\PasswordReset\StepTwo\Controller::class, 'page'])->name('password_reset_step_two_show');
+        Route::post('{hash}', [\App\Http\Controllers\Web\Common\PasswordReset\StepTwo\Controller::class, 'form'])->name('password_reset_step_two_form');
     });
 });
 
