@@ -15,19 +15,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\Web\Forum\Index\Controller::class, 'run'])->name('forum_index');
 
-Route::group(['prefix' => 'profile'], function () {
+Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
     Route::get('', [\App\Http\Controllers\Web\Common\Profile\Show\Controller::class, 'run'])->name('profile_show');
 });
 
-Route::group(['prefix' => 'login'], function () {
+Route::group(['prefix' => 'login', 'middleware' => 'guest'], function () {
     Route::get('', [\App\Http\Controllers\Web\Common\Login\Controller::class, 'page'])->name('login_show');
     Route::post('', [\App\Http\Controllers\Web\Common\Login\Controller::class, 'form'])->name('login_form');
 });
-Route::group(['prefix' => 'registration'], function () {
+Route::group(['prefix' => 'registration', 'middleware' => 'guest'], function () {
     Route::get('', [\App\Http\Controllers\Web\Common\Registration\Controller::class, 'page'])->name('registration_show');
     Route::post('', [\App\Http\Controllers\Web\Common\Registration\Controller::class, 'form'])->name('registration_form');
 });
-Route::group(['prefix' => 'password-reset'], function () {
+Route::group(['prefix' => 'password-reset', 'middleware' => 'guest'], function () {
     Route::group(['prefix' => 'step-one'], function () {
         Route::get('', [\App\Http\Controllers\Web\Common\PasswordReset\StepOne\Controller::class, 'page'])->name('password_reset_step_one_show');
         Route::post('', [\App\Http\Controllers\Web\Common\PasswordReset\StepOne\Controller::class, 'form'])->name('password_reset_step_one_form');
