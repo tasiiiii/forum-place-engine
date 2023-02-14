@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\ForumPlaceEngine\User\Repository\UserPasswordResetRepositoryInterface;
 use App\Models\UserPasswordReset;
+use DateTime;
+use Illuminate\Database\Eloquent\Collection;
 
 class UserPasswordResetRepository implements UserPasswordResetRepositoryInterface
 {
@@ -14,5 +16,12 @@ class UserPasswordResetRepository implements UserPasswordResetRepositoryInterfac
             ->orderByDesc('id')
             ->limit(1)
             ->first();
+    }
+
+    public function getToCreatedBeforeDate(DateTime $toCreatedAt): Collection
+    {
+        return UserPasswordReset::query()
+            ->where('created_at', '<', $toCreatedAt)
+            ->get();
     }
 }

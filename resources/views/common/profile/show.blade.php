@@ -1524,24 +1524,6 @@
         const Elements = {
             reactionOption: '.reaction-option',
             reactionOptions: '.reaction-options',
-            reactionItem: '.reaction-item',
-            reactionItemList: '.reaction-item-list',
-            username: '#username'
-        }
-
-        const Profile = {
-            getCurrentUsername: () => {
-                return $(Elements.username).text();
-            }
-        }
-
-        const ReactionSetter = {
-            execute: (forumTopicId, reaction) => {
-                const reactionList    = $(`${Elements.reactionItemList}[data-forum-topic-id="${forumTopicId}"]`);
-                const reactionElement = reactionList.find(`[alt="reaction-${reaction}"]`);
-
-                $(reactionElement.get(0)).next().append(`<p class="simple-dropdown-text">${Profile.getCurrentUsername()}</p>`);
-            }
         }
 
         const TopicManager = {
@@ -1559,7 +1541,7 @@
                         '_token': '{{ csrf_token() }}'
                     },
                     success: res => {
-                        ReactionSetter.execute(forumTopicId, res.data.reaction);
+                        location.reload();
                     },
                     error: res => {
                         console.error(res);
