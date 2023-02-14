@@ -37,11 +37,8 @@ class PasswordResetStepTwoAction
         }
 
         try {
-            $expiredTime  = (new DateTime())->add(
-                new DateInterval(sprintf('P%dM', $this->emailResetPasswordMinutesLifetime))
-            );
-            $dateInterval = $userResetPassword->created_at->diff($expiredTime);
-            if ($dateInterval->m > $this->emailResetPasswordMinutesLifetime) {
+            $dateInterval = $userResetPassword->created_at->diff(new DateTime());
+            if ($dateInterval->i > $this->emailResetPasswordMinutesLifetime) {
                 throw new ApplicationException('Код восстановления устарел');
             }
 
