@@ -338,7 +338,7 @@
                             <!-- SIMPLE DROPDOWN -->
                             <div class="simple-dropdown widget-box-post-settings-dropdown">
                                 <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link" style="font-family: 'Fira Sans', sans-serif;">Редактировать</p>
+                                <p id="editBiography" class="simple-dropdown-link" style="font-family: 'Fira Sans', sans-serif;">Редактировать</p>
                                 <!-- /SIMPLE DROPDOWN LINK -->
                             </div>
                             <!-- /SIMPLE DROPDOWN -->
@@ -1524,7 +1524,8 @@
         const Elements = {
             reactionOption: '.reaction-option',
             reactionOptions: '.reaction-options',
-            reactionOptionsDropdownTrigger: '.reaction-options-dropdown-trigger'
+            reactionOptionsDropdownTrigger: '.reaction-options-dropdown-trigger',
+            editBiography: '#editBiography'
         }
 
         const TopicManager = {
