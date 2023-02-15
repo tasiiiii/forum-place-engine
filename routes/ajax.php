@@ -11,4 +11,7 @@ Route::group(['prefix' => 'forum'], function () {
     Route::post('topic/reaction/create', [\App\Http\Controllers\Ajax\Forum\Topic\Reaction\Create\Controller::class, 'run'])
         ->middleware('auth')
         ->name('create_topic_reaction');
+    Route::delete('topic/reaction/remove', [\App\Http\Controllers\Ajax\Forum\Topic\Reaction\Remove\Controller::class, 'run'])
+        ->middleware('auth')
+        ->name('remove_topic_reaction');
 });

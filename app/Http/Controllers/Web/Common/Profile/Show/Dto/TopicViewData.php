@@ -11,6 +11,7 @@ class TopicViewData
     private int    $topicMessagesCounter;
     private int    $shareCounter;
     private string $createdAt;
+    private bool   $liked = false;
     /** @var TopicReactionData[] */
     private array  $topicReactions = [];
 
@@ -94,6 +95,18 @@ class TopicViewData
     public function setCreatedAt(string $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function isLiked(): bool
+    {
+        return $this->liked;
+    }
+
+    public function setLiked(bool $liked): self
+    {
+        $this->liked = $liked;
 
         return $this;
     }

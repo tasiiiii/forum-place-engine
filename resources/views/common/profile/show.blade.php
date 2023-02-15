@@ -1070,13 +1070,13 @@
                                                 <!-- REACTION ITEM -->
                                                 <div class="reaction-item">
                                                     <!-- REACTION IMAGE -->
-                                                    <img class="reaction-image reaction-item-dropdown-trigger" src="{{ $topicReaction->getReactionPath() }}" alt="reaction-like">
+                                                    <img class="reaction-image reaction-item-dropdown-trigger" src="{{ $topicReaction->getReactionPath() }}">
                                                     <!-- /REACTION IMAGE -->
 
                                                     <!-- SIMPLE DROPDOWN -->
                                                     <div class="simple-dropdown padded reaction-item-dropdown">
                                                         <!-- SIMPLE DROPDOWN TEXT -->
-                                                        <p class="simple-dropdown-text"><img class="reaction" src="{{ $topicReaction->getReactionPath() }}" alt="reaction-like"> <span class="bold">{{ $topicReaction->getReactionName() }}</span></p>
+                                                        <p class="simple-dropdown-text"><img class="reaction" src="{{ $topicReaction->getReactionPath() }}"> <span class="bold">{{ $topicReaction->getReactionName() }}</span></p>
                                                         <!-- /SIMPLE DROPDOWN TEXT -->
 
                                                         @foreach($topicReaction->getUsers() as $user)
@@ -1127,7 +1127,7 @@
                             <!-- POST OPTION WRAP -->
                             <div class="post-option-wrap">
                                 <!-- POST OPTION -->
-                                <div class="post-option reaction-options-dropdown-trigger">
+                                <div class="post-option reaction-options-dropdown-trigger" data-forum-topic-id="{{ $topic->getId() }}" @if ($topic->isLiked()) style="background: #181944" @endif>
                                     <!-- POST OPTION ICON -->
                                     <svg class="post-option-icon icon-thumbs-up">
                                         <use xlink:href="#svg-thumbs-up"></use>
@@ -1524,10 +1524,11 @@
         const Elements = {
             reactionOption: '.reaction-option',
             reactionOptions: '.reaction-options',
+            reactionOptionsDropdownTrigger: '.reaction-options-dropdown-trigger'
         }
 
         const TopicManager = {
-            setReaction: e => {
+            createReaction: e => {
                 const target          = $(e.target);
                 const reactionOptions = target.closest(Elements.reactionOptions);
                 const forumTopicId    = reactionOptions.data('forum-topic-id');
@@ -1547,12 +1548,40 @@
                         console.error(res);
                     }
                 })
+            },
+            removeReaction: e => {
+                const target       = $(e.target);
+                const container    = target.closest(Elements.reactionOptionsDropdownTrigger);
+                const forumTopicId = container.data('forum-topic-id');
+
+                if (!container.attr('style')) {
+                    return;
+                }
+
+                $.ajax({
+                    type: 'DELETE',
+                    url: '{{ route('remove_topic_reaction') }}',
+                    data: {
+                        forum_topic_id: forumTopicId,
+                        '_token': '{{ csrf_token() }}'
+                    },
+                    success: res => {
+                        location.reload();
+                    },
+                    error: res => {
+                        console.error(res);
+                    }
+                })
             }
         };
 
         $(document).ready(e => {
             $(Elements.reactionOption).click(e => {
-                TopicManager.setReaction(e);
+                TopicManager.createReaction(e);
+            });
+
+            $(Elements.reactionOptionsDropdownTrigger).click(e => {
+                TopicManager.removeReaction(e);
             });
         });
     </script>
