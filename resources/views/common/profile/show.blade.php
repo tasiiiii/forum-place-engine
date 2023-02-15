@@ -338,7 +338,7 @@
                             <!-- SIMPLE DROPDOWN -->
                             <div class="simple-dropdown widget-box-post-settings-dropdown">
                                 <!-- SIMPLE DROPDOWN LINK -->
-                                <p class="simple-dropdown-link">Widget Settings</p>
+                                <p class="simple-dropdown-link" style="font-family: 'Fira Sans', sans-serif;">Редактировать</p>
                                 <!-- /SIMPLE DROPDOWN LINK -->
                             </div>
                             <!-- /SIMPLE DROPDOWN -->
