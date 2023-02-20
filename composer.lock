@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23e3f1413a384afb3bc23007e081cd3b",
+    "content-hash": "21308f7e2e2dc649c3eadb7a05626281",
     "packages": [
         {
             "name": "brick/math",
@@ -5314,6 +5314,43 @@
                 }
             ],
             "time": "2022-12-22T17:55:15+00:00"
+        },
+        {
+            "name": "tasiiiii/fox-security",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tasiiiii/fox-security.git",
+                "reference": "d4264f5c9b6fe3769baf931b7f9ab8d36c2317da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tasiiiii/fox-security/zipball/d4264f5c9b6fe3769baf931b7f9ab8d36c2317da",
+                "reference": "d4264f5c9b6fe3769baf931b7f9ab8d36c2317da",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tasiiiii\\FoxSecurity\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Artem Tyutnev",
+                    "email": "tasiiiii.net@gmail.com"
+                }
+            ],
+            "description": "Library for checking password strength [One day]",
+            "support": {
+                "issues": "https://github.com/tasiiiii/fox-security/issues",
+                "source": "https://github.com/tasiiiii/fox-security/tree/1.0.0"
+            },
+            "time": "2023-02-20T19:36:40+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

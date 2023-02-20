@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'registration', 'middleware' => 'guest'], function () {
     Route::get('name-checker', [\App\Http\Controllers\Ajax\Common\Registration\NameChecker\Controller::class, 'run'])->name('name_checker_ajax');
+    Route::get('password-strength-checker', [\App\Http\Controllers\Ajax\Common\Registration\PasswordStrengthChecker\Controller::class, 'run'])
+        ->name('password_strength_checker_ajax');
 });
 
 Route::group(['prefix' => 'forum'], function () {

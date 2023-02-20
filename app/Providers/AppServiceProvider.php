@@ -2,27 +2,17 @@
 
 namespace App\Providers;
 
+use App\ForumPlaceEngine\User\Service\PasswordStrengthCheckerServiceInterface;
+use App\Infrastructure\PasswordStrengthChecker\PasswordStrengthCheckerService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
-        //
+        $this->app->bind(PasswordStrengthCheckerServiceInterface::class, PasswordStrengthCheckerService::class);
     }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
+    public function boot(): void
+    {}
 }

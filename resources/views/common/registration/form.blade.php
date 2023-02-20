@@ -34,6 +34,9 @@
                         <div class="form-input small" style="margin-top: 10px;">
                             <label for="password" style="font-family: 'Fira Sans', sans-serif;">Пароль</label>
                             <input type="password" id="password" name="password" value="{{ $registrationData->getPassword() }}">
+                            <div id="password-strength-error-container">
+
+                            </div>
                             @error('password')
                                 <span style="color: red; font-family: 'Fira Sans', sans-serif;">{{ $message }}</span>
                             @enderror
@@ -70,12 +73,14 @@
 @section('js')
     <script>
         const NameChecker = {
-            name: '#name',
-            nameAlert: '#nameAlert',
-            form: 'form',
+            elements: {
+                name: '#name',
+                nameAlert: '#nameAlert',
+                form: 'form',
+            },
             exist: false,
-            init: (e) => {
-                const name = $(NameChecker.name).val();
+            init: e => {
+                const name = $(NameChecker.elements.name).val();
 
                 $.ajax({
                     type: 'GET',
@@ -87,12 +92,57 @@
                         NameChecker.exist = res.data.exist;
 
                         if (NameChecker.exist) {
-                            $(NameChecker.nameAlert).show();
+                            $(NameChecker.elements.nameAlert).show();
                         } else {
-                            $(NameChecker.nameAlert).hide();
+                            $(NameChecker.elements.nameAlert).hide();
                         }
                     }
                 })
+            }
+        }
+
+        const PasswordStrengthChecker = {
+            elements: {
+                form: 'form',
+                email: '#email',
+                password: '#password',
+                passwordStrengthErrorContainer: '#password-strength-error-container'
+            },
+            valid: true,
+            init: e => {
+                $(PasswordStrengthChecker.elements.passwordStrengthErrorContainer).html('');
+
+                const password = $(PasswordStrengthChecker.elements.password).val();
+                const userData = [];
+
+                if ($(NameChecker.elements.name).val()) {
+                    userData.push($(NameChecker.elements.name).val());
+                }
+
+                if ($(PasswordStrengthChecker.elements.email).val()) {
+                    userData.push($(PasswordStrengthChecker.elements.email).val());
+                }
+
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('password_strength_checker_ajax') }}',
+                    async: false,
+                    data: {
+                        password: password,
+                        userData: userData
+                    },
+                    success: res => {
+                        PasswordStrengthChecker.valid = res.data.isValid;
+
+                        if (res.data.errors) {
+                            res.data.errors.forEach(error => {
+                                $(PasswordStrengthChecker.elements.passwordStrengthErrorContainer).append(`
+                                <span id="nameAlert" style="display: block; color: red; font-family: 'Fira Sans', sans-serif;">${error}</span>
+                            `);
+                            })
+                        }
+                    }
+                });
             }
         }
 
@@ -102,7 +152,16 @@
                     e.preventDefault();
                 }
             });
-            $(NameChecker.name).keyup(NameChecker.init);
+            $(NameChecker.elements.name).keyup(NameChecker.init);
+
+            $(PasswordStrengthChecker.form).submit(e => {
+                if (PasswordStrengthChecker.valid) {
+                    e.preventDefault();
+                }
+            })
+            $(NameChecker.elements.name).keyup(PasswordStrengthChecker.init);
+            $(PasswordStrengthChecker.elements.email).keyup(PasswordStrengthChecker.init);
+            $(PasswordStrengthChecker.elements.password).keyup(PasswordStrengthChecker.init);
         });
     </script>
 @endsection
