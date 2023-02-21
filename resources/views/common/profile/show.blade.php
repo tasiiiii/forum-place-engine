@@ -302,7 +302,9 @@
                 <!-- PROFILE HEADER INFO ACTIONS -->
                 <div class="profile-header-info-actions">
                     <!-- PROFILE HEADER INFO ACTION -->
-                    <p class="profile-header-info-action button secondary"><span class="hide-text-mobile" style="font-family: 'Fira Sans', sans-serif;">Добавить друга</span></p>
+                    <p class="profile-header-info-action button secondary">
+                        <a href="{{ route('friend_show') }}" class="hide-text-mobile" style="font-family: 'Fira Sans', sans-serif; color: #fff">Добавить друга</a>
+                    </p>
                     <!-- /PROFILE HEADER INFO ACTION -->
 
                     <!-- PROFILE HEADER INFO ACTION -->
@@ -932,7 +934,7 @@
                     <!-- WIDGET BOX CONTENT -->
 
                     <!-- WIDGET BOX BUTTON -->
-                    <a class="widget-box-button button small secondary" href="#" style="font-family: 'Fira Sans', sans-serif;">Показать всех друзей</a>
+                    <a class="widget-box-button button small secondary" href="{{ route('friend_show') }}" style="font-family: 'Fira Sans', sans-serif;">Показать всех друзей</a>
                     <!-- /WIDGET BOX BUTTON -->
                 </div>
                 <!-- /WIDGET BOX -->

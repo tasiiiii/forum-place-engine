@@ -17,6 +17,9 @@ Route::get('/', [\App\Http\Controllers\Web\Forum\Index\Controller::class, 'run']
 
 Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function () {
     Route::get('', [\App\Http\Controllers\Web\Common\Profile\Show\Controller::class, 'run'])->name('profile_show');
+    Route::group(['prefix' => 'friend', 'middleware' => 'auth'], function () {
+        Route::get('', [\App\Http\Controllers\Web\Common\Profile\Friend\Show\Controller::class, 'run'])->name('friend_show');
+    });
 });
 
 Route::group(['prefix' => 'login', 'middleware' => 'guest'], function () {
