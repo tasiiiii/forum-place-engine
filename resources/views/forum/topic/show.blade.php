@@ -319,6 +319,7 @@
                 @include('widget.pagination', ['pagination' => $forumTopicViewData->getForumMessageContainer()->getPaginationData()])
             @endif
 
+            @if (\Illuminate\Support\Facades\Auth::user())
             <!-- QUICK POST -->
             <div class="quick-post medium">
                 <!-- QUICK POST HEADER -->
@@ -395,6 +396,7 @@
                 <!-- /QUICK POST FOOTER -->
             </div>
             <!-- /QUICK POST -->
+            @endif
         </div>
         <!-- /FORUM CONTENT -->
 

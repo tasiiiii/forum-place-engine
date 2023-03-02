@@ -14,16 +14,16 @@ enum ForumTopicStatusEnum: int
     public static function getStatusesWithOpenVisibility(): array
     {
         return [
-            self::Published,
-            self::Pinned,
+            self::Published->value,
+            self::Pinned->value,
         ];
     }
 
     public static function getStatusesOnlyForCreator(): array
     {
         return [
-            self::Draft,
-            self::Archived,
+            self::Draft->value,
+            self::Archived->value,
         ];
     }
 }
