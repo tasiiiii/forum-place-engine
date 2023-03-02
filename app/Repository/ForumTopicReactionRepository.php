@@ -24,4 +24,11 @@ class ForumTopicReactionRepository implements ForumTopicReactionRepositoryInterf
             ->where('forum_topic_id', '=', $forumTopic->id)
             ->get();
     }
+
+    public function countByForumTopic(ForumTopic $forumTopic): int
+    {
+        return ForumTopicReaction::query()
+            ->where('forum_topic_id', '=', $forumTopic->id)
+            ->count();
+    }
 }

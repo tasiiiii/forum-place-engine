@@ -6,6 +6,7 @@ use App\ForumPlaceEngine\ForumMessage\Repository\ForumMessageRepositoryInterface
 use App\Models\ForumCategory;
 use App\Models\ForumMessage;
 use App\Models\ForumTopic;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class ForumMessageRepository implements ForumMessageRepositoryInterface
 {
@@ -24,5 +25,13 @@ class ForumMessageRepository implements ForumMessageRepositoryInterface
             ->where('forum_topic_id', '=', $forumTopic->id)
             ->orderByDesc('created_at')
             ->first();
+    }
+
+    public function getWithPagination(ForumTopic $forumTopic, int $length = 15): LengthAwarePaginator
+    {
+        return ForumMessage::query()
+            ->where('forum_topic_id', '=', $forumTopic->id)
+            ->orderBy('created_at')
+            ->paginate(15);
     }
 }

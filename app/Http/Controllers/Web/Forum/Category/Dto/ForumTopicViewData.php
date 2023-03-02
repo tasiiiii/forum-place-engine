@@ -4,12 +4,25 @@ namespace App\Http\Controllers\Web\Forum\Category\Dto;
 
 class ForumTopicViewData
 {
+    private int               $id;
     private string            $title;
     private string            $creator;
     private string            $createdAt;
     private string            $creatorAvatar;
     private int               $messagesCounter;
     private ?ActivityViewData $activityViewData;
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
     public function getTitle(): string
     {

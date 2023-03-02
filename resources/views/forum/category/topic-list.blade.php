@@ -6,7 +6,7 @@
             <!-- DISCUSSION PREVIEW -->
             <div class="discussion-preview {{ $isPinned ? 'pinned' : '' }}">
                 <!-- DISCUSSION PREVIEW TITLE -->
-                <a class="discussion-preview-title" href="#" style="font-family: 'Fira Sans', sans-serif">{{ $forumTopic->getTitle() }}</a>
+                <a class="discussion-preview-title" href="{{ route('forum_topic_show', ['id' => $forumTopic->getId()]) }}" style="font-family: 'Fira Sans', sans-serif">{{ $forumTopic->getTitle() }}</a>
                 <!-- /DISCUSSION PREVIEW TITLE -->
 
                 <!-- PAGE ITEMS -->
@@ -52,7 +52,7 @@
                         <!-- USER AVATAR CONTENT -->
                         <div class="user-avatar-content">
                             <!-- HEXAGON -->
-                            <div class="hexagon-image-18-20" data-src="/img/avatar/07.jpg"></div>
+                            <div class="hexagon-image-18-20" data-src="{{ $forumTopic->getCreatorAvatar() }}"></div>
                             <!-- /HEXAGON -->
                         </div>
                         <!-- /USER AVATAR CONTENT -->

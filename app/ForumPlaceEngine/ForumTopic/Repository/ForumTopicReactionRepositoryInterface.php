@@ -11,4 +11,5 @@ interface ForumTopicReactionRepositoryInterface
 {
     public function getByForumTopicAndUser(ForumTopic $forumTopic, User $user): ?ForumTopicReaction;
     public function getByForumTopic(ForumTopic $forumTopic): Collection;
+    public function countByForumTopic(ForumTopic $forumTopic): int;
 }
