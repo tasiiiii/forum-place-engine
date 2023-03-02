@@ -2,8 +2,7 @@
 
 namespace App\ForumPlaceEngine\ForumTopic\Contract;
 
-interface ForumTopicRemoveReactionDataInterface
+interface ForumTopicRemoveReactionDataInterface extends ForumTopicIdentificationDataInterface
 {
-    public function getForumTopicId(): int;
     public function getUserId(): int;
 }

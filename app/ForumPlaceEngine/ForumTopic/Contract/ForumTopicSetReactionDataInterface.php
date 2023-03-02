@@ -2,9 +2,8 @@
 
 namespace App\ForumPlaceEngine\ForumTopic\Contract;
 
-interface ForumTopicSetReactionDataInterface
+interface ForumTopicSetReactionDataInterface extends ForumTopicIdentificationDataInterface
 {
-    public function getForumTopicId(): int;
     public function getReactionType(): string;
     public function getUserId(): int;
 }

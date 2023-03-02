@@ -384,11 +384,7 @@
                     <!-- QUICK POST FOOTER ACTIONS -->
                     <div class="quick-post-footer-actions">
                         <!-- BUTTON -->
-                        <p class="button void">Discard</p>
-                        <!-- /BUTTON -->
-
-                        <!-- BUTTON -->
-                        <p class="button secondary">Post Reply</p>
+                        <p class="button secondary" style="font-family: 'Fira Sans', sans-serif;">Опубликовать</p>
                         <!-- /BUTTON -->
                     </div>
                     <!-- /QUICK POST FOOTER ACTIONS -->
