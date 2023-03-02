@@ -7,11 +7,7 @@
             <!-- SECTION PAGER ITEM -->
             <div class="section-pager-item {{ $pagination->getFirstPage()->isCurrent() ? 'active' : '' }}">
                 <!-- SECTION PAGER ITEM TEXT -->
-                <a
-                    class="section-pager-item-text"
-                    href="{{ $pagination->getFirstPage()->getUrl() }}"
-                    style="background: #161b28"
-                >
+                <a class="section-pager-item-text" href="{{ $pagination->getFirstPage()->getUrl() }}" style="background: #161b28">
                     {{ $pagination->getFirstPage()->getPage() }}
                 </a>
                 <!-- /SECTION PAGER ITEM TEXT -->
@@ -32,11 +28,7 @@
                 <!-- SECTION PAGER ITEM -->
                 <div class="section-pager-item {{ $pagination->getLastPage()->isCurrent() ? 'active' : '' }}">
                     <!-- SECTION PAGER ITEM TEXT -->
-                    <a
-                        class="section-pager-item-text"
-                        href="{{ $pagination->getLastPage()->getUrl() }}"
-                        style="background: #161b28"
-                    >
+                    <a class="section-pager-item-text" href="{{ $pagination->getLastPage()->getUrl() }}" style="background: #161b28">
                         {{ $pagination->getLastPage()->getPage() }}
                     </a>
                     <!-- /SECTION PAGER ITEM TEXT -->
