@@ -27,7 +27,7 @@ class ForumMessageRepository implements ForumMessageRepositoryInterface
             ->first();
     }
 
-    public function getWithPagination(ForumTopic $forumTopic, int $length = 15): LengthAwarePaginator
+    public function getWithPagination(ForumTopic $forumTopic, int $length = 10): LengthAwarePaginator
     {
         return ForumMessage::query()
             ->where('forum_topic_id', '=', $forumTopic->id)

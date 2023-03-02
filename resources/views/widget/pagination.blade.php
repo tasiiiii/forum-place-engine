@@ -5,79 +5,46 @@
         <!-- SECTION PAGER -->
         <div class="section-pager">
             <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item active">
+            <div class="section-pager-item {{ $pagination->getFirstPage()->isCurrent() ? 'active' : '' }}">
                 <!-- SECTION PAGER ITEM TEXT -->
-                <p class="section-pager-item-text">01</p>
+                <a
+                    class="section-pager-item-text"
+                    href="{{ $pagination->getFirstPage()->getUrl() }}"
+                    style="background: #161b28"
+                >
+                    {{ $pagination->getFirstPage()->getPage() }}
+                </a>
                 <!-- /SECTION PAGER ITEM TEXT -->
             </div>
             <!-- /SECTION PAGER ITEM -->
 
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-                <!-- SECTION PAGER ITEM TEXT -->
-                <p class="section-pager-item-text">02</p>
-                <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
+            @foreach ($pagination->getPageRange() as $page)
+                <!-- SECTION PAGER ITEM -->
+                <div class="section-pager-item {{ $page->isCurrent() ? 'active' : '' }}">
+                    <!-- SECTION PAGER ITEM TEXT -->
+                    <a class="section-pager-item-text" href="{{ $page->getUrl() }}">{{ $page->getPage() }}</a>
+                    <!-- /SECTION PAGER ITEM TEXT -->
+                </div>
+                <!-- /SECTION PAGER ITEM -->
+            @endforeach
 
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-                <!-- SECTION PAGER ITEM TEXT -->
-                <p class="section-pager-item-text">03</p>
-                <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-                <!-- SECTION PAGER ITEM TEXT -->
-                <p class="section-pager-item-text">04</p>
-                <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-                <!-- SECTION PAGER ITEM TEXT -->
-                <p class="section-pager-item-text">05</p>
-                <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-
-            <!-- SECTION PAGER ITEM -->
-            <div class="section-pager-item">
-                <!-- SECTION PAGER ITEM TEXT -->
-                <p class="section-pager-item-text">06</p>
-                <!-- /SECTION PAGER ITEM TEXT -->
-            </div>
-            <!-- /SECTION PAGER ITEM -->
-        </div>
-        <!-- /SECTION PAGER -->
-
-        <!-- SECTION PAGER CONTROLS -->
-        <div class="section-pager-controls">
-            <!-- SLIDER CONTROL -->
-            <div class="slider-control left disabled">
-                <!-- SLIDER CONTROL ICON -->
-                <svg class="slider-control-icon icon-small-arrow">
-                    <use xlink:href="#svg-small-arrow"></use>
-                </svg>
-                <!-- /SLIDER CONTROL ICON -->
-            </div>
-            <!-- /SLIDER CONTROL -->
-
-            <!-- SLIDER CONTROL -->
-            <div class="slider-control right">
-                <!-- SLIDER CONTROL ICON -->
-                <svg class="slider-control-icon icon-small-arrow">
-                    <use xlink:href="#svg-small-arrow"></use>
-                </svg>
-                <!-- /SLIDER CONTROL ICON -->
-            </div>
-            <!-- /SLIDER CONTROL -->
-        </div>
-        <!-- /SECTION PAGER CONTROLS -->
+            @if ($pagination->getLastPage())
+                <!-- SECTION PAGER ITEM -->
+                <div class="section-pager-item {{ $pagination->getLastPage()->isCurrent() ? 'active' : '' }}">
+                    <!-- SECTION PAGER ITEM TEXT -->
+                    <a
+                        class="section-pager-item-text"
+                        href="{{ $pagination->getLastPage()->getUrl() }}"
+                        style="background: #161b28"
+                    >
+                        {{ $pagination->getLastPage()->getPage() }}
+                    </a>
+                    <!-- /SECTION PAGER ITEM TEXT -->
+                </div>
+                <!-- /SECTION PAGER ITEM -->
+            @endif
     </div>
-    <!-- /SECTION PAGER BAR -->
-</div>
+        <!-- /SECTION PAGER BAR -->
+    </div>
 <!-- /SECTION PAGER BAR WRAP -->
+</div>

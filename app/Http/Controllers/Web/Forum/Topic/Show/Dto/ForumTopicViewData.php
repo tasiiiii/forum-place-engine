@@ -6,14 +6,13 @@ use App\Http\Controllers\Web\Forum\Topic\Show\ValueObject\UserViewData;
 
 class ForumTopicViewData
 {
-    private string       $title;
-    private string       $content;
-    private UserViewData $creator;
-    private int          $reactionCounter;
-    private int          $sharedCounter;
-    private string       $createdAt;
-    /** @var ForumMessageViewData[] */
-    private array        $forumMessages;
+    private string                $title;
+    private string                $content;
+    private UserViewData          $creator;
+    private int                   $reactionCounter;
+    private int                   $sharedCounter;
+    private string                $createdAt;
+    private ForumMessageContainer $forumMessageContainer;
 
     public function getTitle(): string
     {
@@ -87,21 +86,14 @@ class ForumTopicViewData
         return $this;
     }
 
-    /**
-     * @return ForumMessageViewData[]
-     */
-    public function getForumMessages(): array
+    public function getForumMessageContainer(): ForumMessageContainer
     {
-        return $this->forumMessages;
+        return $this->forumMessageContainer;
     }
 
-    /**
-     * @param ForumMessageViewData[] $forumMessages
-     * @return $this
-     */
-    public function setForumMessages(array $forumMessages): self
+    public function setForumMessageContainer(ForumMessageContainer $forumMessageContainer): self
     {
-        $this->forumMessages = $forumMessages;
+        $this->forumMessageContainer = $forumMessageContainer;
 
         return $this;
     }

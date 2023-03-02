@@ -169,7 +169,7 @@
                 </div>
                 <!-- /FORUM POST -->
 
-                @foreach($forumTopicViewData->getForumMessages() as $forumMessages)
+                @foreach($forumTopicViewData->getForumMessageContainer()->getForumMessages() as $forumMessages)
                 <!-- FORUM POST -->
                 <div class="forum-post">
                     <!-- FORUM POST META -->
@@ -315,8 +315,8 @@
             </div>
             <!-- /FORUM POST LIST -->
 
-            @if (count($forumTopicViewData->getForumMessages()))
-                @include('widget.pagination')
+            @if (count($forumTopicViewData->getForumMessageContainer()->getForumMessages()))
+                @include('widget.pagination', ['pagination' => $forumTopicViewData->getForumMessageContainer()->getPaginationData()])
             @endif
 
             <!-- QUICK POST -->

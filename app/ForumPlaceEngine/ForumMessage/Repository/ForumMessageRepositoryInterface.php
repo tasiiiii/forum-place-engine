@@ -11,5 +11,5 @@ interface ForumMessageRepositoryInterface
 {
     public function countMessagesInForumCategory(ForumCategory $forumCategory): int;
     public function getLastMessageInTopic(ForumTopic $forumTopic): ?ForumMessage;
-    public function getWithPagination(ForumTopic $forumTopic, int $length = 15): LengthAwarePaginator;
+    public function getWithPagination(ForumTopic $forumTopic, int $length = 10): LengthAwarePaginator;
 }
