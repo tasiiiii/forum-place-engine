@@ -18,4 +18,12 @@ enum ForumTopicStatusEnum: int
             self::Pinned,
         ];
     }
+
+    public static function getStatusesOnlyForCreator(): array
+    {
+        return [
+            self::Draft,
+            self::Archived,
+        ];
+    }
 }
