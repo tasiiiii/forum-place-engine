@@ -32,6 +32,6 @@ class ForumMessageRepository implements ForumMessageRepositoryInterface
         return ForumMessage::query()
             ->where('forum_topic_id', '=', $forumTopic->id)
             ->orderBy('created_at')
-            ->paginate(15);
+            ->paginate($length);
     }
 }

@@ -24,7 +24,7 @@ class ForumTopicViewBuilder
     {
         $creator = new UserViewData($forumTopic->creator->name, $forumTopic->creator->avatar);
 
-        $forumMessages     = $this->forumMessageRepository->getWithPagination($forumTopic);
+        $forumMessages     = $this->forumMessageRepository->getWithPagination($forumTopic, 5);
         $forumMessagesData = [];
         foreach ($forumMessages as $forumMessage) {
             $forumMessagesData[] = $this->forumMessageViewBuilder->build($forumMessage);

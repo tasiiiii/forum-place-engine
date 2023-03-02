@@ -6,7 +6,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class PaginationDataBuilder
 {
-    private const PAGE_OFFSET = 3;
+    private const PAGE_OFFSET = 2;
 
     public function build(LengthAwarePaginator $paginator): PaginationData
     {

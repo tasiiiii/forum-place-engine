@@ -1,5 +1,5 @@
 <!-- SECTION PAGER BAR WRAP -->
-<div class="section-pager-bar-wrap align-right">
+<div class="section-pager-bar-wrap align-left">
     <!-- SECTION PAGER BAR -->
     <div class="section-pager-bar">
         <!-- SECTION PAGER -->
